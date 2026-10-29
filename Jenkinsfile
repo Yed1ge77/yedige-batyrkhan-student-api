@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker run --rm --name "${CI_DB}-build" -u "$(id -u):$(id -g)" -v "$PWD:/workspace" -w /workspace -e GRADLE_USER_HOME=/workspace/.gradle-ci eclipse-temurin:21-jdk-jammy ./gradlew --no-daemon clean assemble'
+                sh 'docker run --rm --name "${CI_DB}-build" -u "$(id -u):$(id -g)" -v "$PWD:/workspace" -w /workspace -e GRADLE_USER_HOME=/workspace/.gradle-ci eclipse-temurin:21-jdk-jammy@sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69 ./gradlew --no-daemon clean assemble'
             }
         }
         stage('Test') {
@@ -40,7 +40,7 @@ export POSTGRES_PASSWORD="$DB_PASSWORD"
 docker network create --label owner=yedige-batyrkhan-student-api "$CI_NETWORK" >/dev/null
 docker run -d --name "$CI_DB" --network "$CI_NETWORK" --network-alias db \
   --label owner=yedige-batyrkhan-student-api -e POSTGRES_PASSWORD \
-  -e POSTGRES_USER="$DB_USER" -e POSTGRES_DB=student_api_test postgres:16.15-bookworm >/dev/null
+  -e POSTGRES_USER="$DB_USER" -e POSTGRES_DB=student_api_test postgres:16.15-bookworm@sha256:e8a07d2c7579b038938cdba6c539e580e5001caf9ea203d397b5cc83e76bd938 >/dev/null
 for attempt in {1..60}; do
   if docker exec "$CI_DB" pg_isready -U "$DB_USER" -d student_api_test >/dev/null 2>&1; then break; fi
   sleep 1
@@ -49,7 +49,7 @@ docker exec "$CI_DB" pg_isready -U "$DB_USER" -d student_api_test
 docker run --rm --name "${CI_DB}-test" --network "$CI_NETWORK" -u "$(id -u):$(id -g)" \
   -v "$PWD:/workspace" -w /workspace -e GRADLE_USER_HOME=/workspace/.gradle-ci \
   -e DB_PASSWORD -e DB_USER -e DB_URL=jdbc:postgresql://db:5432/student_api_test \
-  eclipse-temurin:21-jdk-jammy ./gradlew --no-daemon test
+  eclipse-temurin:21-jdk-jammy@sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69 ./gradlew --no-daemon test
 '''
                 }
             }

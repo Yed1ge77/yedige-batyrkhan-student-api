@@ -1,0 +1,18 @@
+# Сценарий демонстрации
+
+Автор: Batyrkhan Yedige Yerlanuly, IT2-2302, 38419, IITU.
+
+Не выдавать запланированные действия за выполненные. Текущее состояние видно в REQUIREMENTS.md; Jenkins/Docker ещё требуют доступов. Для API использовать только один режим на порту 8081 одновременно.
+
+1. Открыть терминал в проекте, `pwd`, показать структуру, ФИО README и полный источник требований в evidence/Yedige_Batyrkhan_assignment.txt.
+2. Из `/tmp` запустить абсолютный путь `scripts/Yedige_Batyrkhan_system_report.sh`. Показать log, `ls -l`, `stat`, mode 744. `tail -5` и `grep Yedige` с перенаправлением; объяснить `>` и `>>`. Показать `ps -ef`, `pgrep -a java`, backup и `cmp` финального README.
+3. `git log --graph --decorate --oneline --all`: первый commit, 3 содержательных CRUD commits, merge. Открыть evidence/Yedige_Batyrkhan_git-conflict.txt и commit 70883f4 с разрешением конфликта. Показать branches. Remote и release tag демонстрировать только после реальной публикации.
+4. Показать DTO, controller, service, repository, Flyway V1. Объяснить 201/200/204/400/404/409 и почему Hibernate validate, а не update. Показать 9 успешных тестов main и реальные JUnit XML. Тестовая БД отделена от demo.
+5. Native fallback: `bash scripts/Yedige_Batyrkhan_local.sh start`, health/info, `python3 scripts/Yedige_Batyrkhan_verify_api.py`. Он выполняет 15 запросов с ФИО и уникальным email; результаты в evidence. Объяснить, что native запуск не заменяет обязательную Docker-демонстрацию.
+6. После доступа к daemon остановить native сервисы: `bash scripts/Yedige_Batyrkhan_local.sh stop`. Запустить `bash scripts/Yedige_Batyrkhan_verify_docker.sh`. Проверить PASS и evidence/Yedige_Batyrkhan_docker-persistence.txt. Показать версии 1.0.0 → 1.0.1, UID 10001, образы с created/size, Compose ps/logs, inspect без секретов, curl и сохранность записи после down/up без -v.
+7. После GitHub/Jenkins login создать и push новый repository по README. Configure script создаёт отдельные credential/job. Проверить Jenkinsfile через API validator. Запустить main pipeline, сохранить номер, result SUCCESS, checkout SHA, stages и JUnit.
+8. Запустить test/yedige-batyrkhan-ci-failure-repro: ожидать FAILURE Test, увидеть expected WRONG-EXPECTED-EMAIL. Docker Build и Verify должны быть skipped. Сохранить console/build JSON. Запустить исправленную test/yedige-batyrkhan-ci-recovery: ожидать SUCCESS и 10 tests. Не путать сохранённые локальные логи с Jenkins logs.
+9. Перед automation выполнить успешный baseline main и убедиться, что polling зарегистрирован. Добавить содержательную документацию, например фактическую причину проверенного сбоя и её исправление, в docs/ci-observation.md. `git add`, meaningful commit, `git push origin main`. **Не вызывать build API после этого commit**. Дождаться polling (интервал 1 мин), смотреть `python3 scripts/Yedige_Batyrkhan_jenkins_api.py status`.
+10. У автоматической сборки проверить cause `hudson.triggers.SCMTrigger$SCMTriggerCause` и SHA нового commit. `python3 scripts/Yedige_Batyrkhan_jenkins_api.py collect --number N`, `... poll-log`. Сохранить JSON и Console Output; ручной UserIdCause не подходит как доказательство automation.
+11. После устранения всех обязательных пробелов обновить REQUIREMENTS/report, зафиксировать итог. Создать annotated tag `git tag -a v1.0-yedige-batyrkhan -m 'Batyrkhan Yedige Student API verified midterm release'`; `git push origin v1.0-yedige-batyrkhan`. Показать remote/history/branches/tag и проверить remote refs через `git ls-remote --heads --tags origin`.
+12. Показать архитектуру, отчёт и ответы защиты; объяснить CI, Delivery, Deployment и отсутствие требования внешнего deployment. Остановить только свой проект `docker compose stop`, либо оставить для проверки преподавателем и явно сообщить это.

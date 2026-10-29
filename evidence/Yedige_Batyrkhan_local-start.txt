@@ -1,0 +1,1 @@
+{"university":"IITU","studentId":"38419","group":"IT2-2302","version":"1.0.1","student":"Batyrkhan Yedige Yerlanuly"}

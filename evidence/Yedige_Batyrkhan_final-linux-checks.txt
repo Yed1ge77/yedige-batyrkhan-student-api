@@ -1,0 +1,25 @@
+-rwxr--r-- 1 batyr batyr  491 Oct 30 01:48 scripts/Yedige_Batyrkhan_system_report.sh
+
+backups:
+total 20
+-rw-r--r-- 1 batyr batyr 13727 Oct 30 02:00 Yedige_Batyrkhan_README.final.md
+-rw-r--r-- 1 batyr batyr   225 Oct 30 01:48 Yedige_Batyrkhan_README.initial.md
+744 scripts/Yedige_Batyrkhan_system_report.sh
+PASS final README backup identical
+none            1.9G     0  1.9G   0% /run/shm
+none            1.9G   80K  1.9G   1% /mnt/wslg/versions.txt
+none            1.9G   80K  1.9G   1% /mnt/wslg/doc
+C:\             237G  213G   25G  90% /mnt/c
+tmpfs           381M   20K  381M   1% /run/user/1000
+Student: Batyrkhan Yedige Yerlanuly | IT2-2302 | 38419 | IITU
+163 /usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8080 --httpListenAddress=127.0.0.1
+6685 /home/batyr/devops/yedige-batyrkhan-student-api/.tools/jdk/root/usr/lib/jvm/java-21-openjdk-amd64/bin/java -Xmx256m -jar build/libs/student-api.jar
+State  Recv-Q Send-Q      Local Address:Port  Peer Address:PortProcess
+LISTEN 0      4096           127.0.0.54:53         0.0.0.0:*          
+LISTEN 0      4096            127.0.0.1:22         0.0.0.0:*          
+LISTEN 0      128             127.0.0.1:43207      0.0.0.0:*          
+LISTEN 0      200             127.0.0.1:55432      0.0.0.0:*          
+LISTEN 0      4096        127.0.0.53%lo:53         0.0.0.0:*          
+LISTEN 0      1000       10.255.255.254:53         0.0.0.0:*          
+LISTEN 0      50     [::ffff:127.0.0.1]:8080             *:*          
+LISTEN 0      100                     *:8081             *:*          

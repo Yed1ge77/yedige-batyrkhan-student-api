@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="kz.iitu.yedige.studentapi.StudentServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-29T20:59:05.051Z" hostname="Liverpool96" time="0.109">
+  <properties/>
+  <testcase name="missingStudentHasClearError()" classname="kz.iitu.yedige.studentapi.StudentServiceTest" time="0.069"/>
+  <testcase name="updateChangesExistingStudentAndNormalizesEmail()" classname="kz.iitu.yedige.studentapi.StudentServiceTest" time="0.02"/>
+  <testcase name="deleteMissingStudentNeverDeletesOtherRows()" classname="kz.iitu.yedige.studentapi.StudentServiceTest" time="0.013"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

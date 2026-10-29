@@ -1,0 +1,20 @@
+*   70883f4 (HEAD -> main) Yedige Batyrkhan: resolve README conflict preserving demo and defense requirements
+|\  
+| * 4bfbe0e (feature/yedige-batyrkhan-documentation) Yedige Batyrkhan: document oral defense scope
+* |   11eac23 Yedige Batyrkhan: merge demonstration documentation
+|\ \  
+| |/  
+|/|   
+| * 069694b (feature/yedige-batyrkhan-readme-review) Yedige Batyrkhan: document reproducible API demonstration
+|/  
+*   4fcabfd Yedige Batyrkhan: merge verified CRUD implementation and delivery configuration
+|\  
+| * 63b3d98 (feature/yedige-batyrkhan-crud) Yedige Batyrkhan: add isolated Docker Compose stack and Jenkins PostgreSQL pipeline
+| * 9eaa2ee Yedige Batyrkhan: verify CRUD errors against real PostgreSQL with Gradle Wrapper
+| * 1cf95cc Yedige Batyrkhan: implement PostgreSQL Student CRUD with validated DTOs
+|/  
+* 12b2fdc Initial commit: Batyrkhan Yedige Student API
+  feature/yedige-batyrkhan-crud
+  feature/yedige-batyrkhan-documentation
+  feature/yedige-batyrkhan-readme-review
+* main

@@ -1,0 +1,160 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-10-30T01:54:32.845+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] k.i.y.studentapi.StudentApiApplication   : Starting StudentApiApplication v1.0.0 using Java 21.0.12.1 with PID 5803 (/home/batyr/devops/yedige-batyrkhan-student-api/build/libs/student-api.jar started by batyr in /home/batyr/devops/yedige-batyrkhan-student-api)
+2026-10-30T01:54:32.850+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] k.i.y.studentapi.StudentApiApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-10-30T01:54:33.614+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-30T01:54:33.735+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 1 JPA repository interface.
+2026-10-30T01:54:34.699+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-10-30T01:54:34.725+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-30T01:54:34.726+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-10-30T01:54:34.768+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-30T01:54:34.771+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1815 ms
+2026-10-30T01:54:35.571+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-30T01:54:35.973+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7be38eba
+2026-10-30T01:54:35.977+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-30T01:54:36.053+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://127.0.0.1:55432/student_api_demo (PostgreSQL 16.15)
+2026-10-30T01:54:36.121+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-30T01:54:36.129+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.031s)
+2026-10-30T01:54:36.159+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-30T01:54:36.244+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-30T01:54:36.257+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - create students"
+2026-10-30T01:54:36.306+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "public", now at version v1 (execution time 00:00.021s)
+2026-10-30T01:54:36.475+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-30T01:54:36.591+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.53.Final
+2026-10-30T01:54:36.672+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-30T01:54:37.131+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-30T01:54:37.226+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-30T01:54:38.147+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-30T01:54:38.191+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-30T01:54:39.896+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-10-30T01:54:40.081+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2026-10-30T01:54:40.107+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [           main] k.i.y.studentapi.StudentApiApplication   : Started StudentApiApplication in 8.358 seconds (process running for 10.58)
+2026-10-30T01:54:40.839+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-30T01:54:40.840+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-30T01:54:40.841+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-30T01:54:41.744+05:00  WARN 5803 --- [yedige-batyrkhan-student-api] [nio-8081-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23505
+2026-10-30T01:54:41.744+05:00 ERROR 5803 --- [yedige-batyrkhan-student-api] [nio-8081-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: duplicate key value violates unique constraint "uk_students_email"
+  Detail: Key (email)=(yedige.38419.75610b74@example.com) already exists.
+2026-10-30T01:57:41.278+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-30T01:57:41.320+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-10-30T01:57:41.367+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-30T01:57:41.402+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-30T01:57:41.422+05:00  INFO 5803 --- [yedige-batyrkhan-student-api] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-10-30T01:57:44.262+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] k.i.y.studentapi.StudentApiApplication   : Starting StudentApiApplication v1.0.1 using Java 21.0.12.1 with PID 6422 (/home/batyr/devops/yedige-batyrkhan-student-api/build/libs/student-api.jar started by batyr in /home/batyr/devops/yedige-batyrkhan-student-api)
+2026-10-30T01:57:44.273+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] k.i.y.studentapi.StudentApiApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-10-30T01:57:47.690+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-30T01:57:47.815+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 1 JPA repository interface.
+2026-10-30T01:57:49.325+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-10-30T01:57:49.366+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-30T01:57:49.367+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-10-30T01:57:49.431+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-30T01:57:49.434+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4971 ms
+2026-10-30T01:57:51.159+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-30T01:57:52.117+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d283d1
+2026-10-30T01:57:52.134+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-30T01:57:52.326+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://127.0.0.1:55432/student_api_demo (PostgreSQL 16.15)
+2026-10-30T01:57:52.690+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.177s)
+2026-10-30T01:57:52.753+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2026-10-30T01:57:52.772+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-30T01:57:53.310+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-30T01:57:53.609+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.53.Final
+2026-10-30T01:57:53.701+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-30T01:57:54.525+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-30T01:57:54.759+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-30T01:57:56.711+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-30T01:57:56.798+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-30T01:58:00.126+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-10-30T01:58:00.410+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2026-10-30T01:58:00.472+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [           main] k.i.y.studentapi.StudentApiApplication   : Started StudentApiApplication in 17.638 seconds (process running for 18.85)
+2026-10-30T01:58:00.689+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-30T01:58:00.690+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-30T01:58:00.694+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-10-30T01:58:02.267+05:00  WARN 6422 --- [yedige-batyrkhan-student-api] [nio-8081-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23505
+2026-10-30T01:58:02.268+05:00 ERROR 6422 --- [yedige-batyrkhan-student-api] [nio-8081-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: duplicate key value violates unique constraint "uk_students_email"
+  Detail: Key (email)=(yedige.38419.18b5d48f@example.com) already exists.
+2026-10-30T01:58:03.065+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-30T01:58:03.078+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-10-30T01:58:03.105+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-30T01:58:03.119+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-30T01:58:03.145+05:00  INFO 6422 --- [yedige-batyrkhan-student-api] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-10-30T01:58:07.589+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] k.i.y.studentapi.StudentApiApplication   : Starting StudentApiApplication v1.0.1 using Java 21.0.12.1 with PID 6685 (/home/batyr/devops/yedige-batyrkhan-student-api/build/libs/student-api.jar started by batyr in /home/batyr/devops/yedige-batyrkhan-student-api)
+2026-10-30T01:58:07.608+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] k.i.y.studentapi.StudentApiApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-10-30T01:58:10.459+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-30T01:58:10.657+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 151 ms. Found 1 JPA repository interface.
+2026-10-30T01:58:12.357+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-10-30T01:58:12.414+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-30T01:58:12.414+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-10-30T01:58:12.513+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-30T01:58:12.517+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4712 ms
+2026-10-30T01:58:14.056+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-30T01:58:14.773+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1152900
+2026-10-30T01:58:14.778+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-30T01:58:14.921+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://127.0.0.1:55432/student_api_demo (PostgreSQL 16.15)
+2026-10-30T01:58:15.223+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.167s)
+2026-10-30T01:58:15.319+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2026-10-30T01:58:15.337+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-30T01:58:15.775+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-30T01:58:16.034+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.53.Final
+2026-10-30T01:58:16.153+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-30T01:58:16.845+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-30T01:58:16.983+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-30T01:58:19.045+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-30T01:58:19.135+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-30T01:58:21.394+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-10-30T01:58:21.580+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2026-10-30T01:58:21.614+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [           main] k.i.y.studentapi.StudentApiApplication   : Started StudentApiApplication in 15.722 seconds (process running for 19.11)
+2026-10-30T01:58:22.331+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-30T01:58:22.332+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-30T01:58:22.334+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-10-30T01:58:28.847+05:00  WARN 6685 --- [yedige-batyrkhan-student-api] [nio-8081-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23505
+2026-10-30T01:58:28.848+05:00 ERROR 6685 --- [yedige-batyrkhan-student-api] [nio-8081-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: duplicate key value violates unique constraint "uk_students_email"
+  Detail: Key (email)=(yedige.38419.14404aac@example.com) already exists.

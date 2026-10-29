@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="kz.iitu.yedige.studentapi.StudentApiIntegrationTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-29T20:59:02.457Z" hostname="Liverpool96" time="2.149">
+  <properties/>
+  <testcase name="duplicateEmailReturns409()" classname="kz.iitu.yedige.studentapi.StudentApiIntegrationTest" time="1.627"/>
+  <testcase name="healthAndPersonalInfoAreAvailable()" classname="kz.iitu.yedige.studentapi.StudentApiIntegrationTest" time="0.219"/>
+  <testcase name="malformedJsonAndIdReturn400()" classname="kz.iitu.yedige.studentapi.StudentApiIntegrationTest" time="0.052"/>
+  <testcase name="invalidFieldsReturn400()" classname="kz.iitu.yedige.studentapi.StudentApiIntegrationTest" time="0.042"/>
+  <testcase name="missingStudentReturns404ForAllOperations()" classname="kz.iitu.yedige.studentapi.StudentApiIntegrationTest" time="0.063"/>
+  <testcase name="fullCrudUsesPostgresql()" classname="kz.iitu.yedige.studentapi.StudentApiIntegrationTest" time="0.119"/>
+  <system-out><![CDATA[01:58:47.771 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [kz.iitu.yedige.studentapi.StudentApiIntegrationTest]: StudentApiIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:58:48.228 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration kz.iitu.yedige.studentapi.StudentApiApplication for test class kz.iitu.yedige.studentapi.StudentApiIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-10-30T01:58:49.646+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] k.i.y.s.StudentApiIntegrationTest        : Starting StudentApiIntegrationTest using Java 21.0.12.1 with PID 7058 (started by batyr in /home/batyr/devops/yedige-batyrkhan-student-api/.tools/ci-recovery)
+2026-10-30T01:58:49.649+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] k.i.y.s.StudentApiIntegrationTest        : No active profile set, falling back to 1 default profile: "default"
+2026-10-30T01:58:52.412+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-30T01:58:52.544+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 102 ms. Found 1 JPA repository interface.
+2026-10-30T01:58:54.068+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-30T01:58:54.778+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@305aaedf
+2026-10-30T01:58:54.783+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-30T01:58:54.867+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://127.0.0.1:55432/student_api_test (PostgreSQL 16.15)
+2026-10-30T01:58:55.656+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.373s)
+2026-10-30T01:58:55.851+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2026-10-30T01:58:55.867+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-30T01:58:56.479+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-30T01:58:56.766+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.53.Final
+2026-10-30T01:58:56.858+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-30T01:58:57.777+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-30T01:58:57.907+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-30T01:58:59.601+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-30T01:58:59.681+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-30T01:59:01.832+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-30T01:59:01.834+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-30T01:59:01.851+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-10-30T01:59:01.903+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 69 ms
+2026-10-30T01:59:02.237+05:00  INFO 7058 --- [yedige-batyrkhan-student-api] [    Test worker] k.i.y.s.StudentApiIntegrationTest        : Started StudentApiIntegrationTest in 13.344 seconds (process running for 16.656)
+2026-10-30T01:59:03.913+05:00  WARN 7058 --- [yedige-batyrkhan-student-api] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23505
+2026-10-30T01:59:03.913+05:00 ERROR 7058 --- [yedige-batyrkhan-student-api] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: duplicate key value violates unique constraint "uk_students_email"
+  Detail: Key (email)=(38419@example.com) already exists.
+]]></system-out>
+  <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/home/batyr/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.17.8/f09415827a71be7ed621c7bd02550678f28bc81c/byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>

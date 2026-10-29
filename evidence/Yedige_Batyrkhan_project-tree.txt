@@ -1,0 +1,107 @@
+Project: /home/batyr/devops/yedige-batyrkhan-student-api
+Required paths:
+OK scripts
+OK logs
+OK backups
+OK src
+OK Dockerfile
+OK docker-compose.yml
+OK Jenkinsfile
+OK build.gradle
+OK README.md
+
+Tree (excluding .git, .tools, .secrets, .gradle, build and Python cache):
+.dockerignore
+.env.example
+.gitignore
+Dockerfile
+Jenkinsfile
+README.md
+REQUIREMENTS.md
+Yedige_Batyrkhan_log_analysis.txt
+backups/
+  Yedige_Batyrkhan_README.final.md
+  Yedige_Batyrkhan_README.initial.md
+build.gradle
+docker-compose.yml
+docs/
+  architecture.md
+  defense-ru.md
+  demo-checklist.md
+  screenshots.md
+evidence/
+  Yedige_Batyrkhan_assignment.txt
+  Yedige_Batyrkhan_compose-safe-config.json
+  Yedige_Batyrkhan_controlled-local-failure.txt
+  Yedige_Batyrkhan_controlled-local-recovery.txt
+  Yedige_Batyrkhan_docker-verification.txt
+  Yedige_Batyrkhan_environment.txt
+  Yedige_Batyrkhan_git-conflict.txt
+  Yedige_Batyrkhan_git-history.txt
+  Yedige_Batyrkhan_gradle-final-test.txt
+  Yedige_Batyrkhan_gradle-missing-jdk.txt
+  Yedige_Batyrkhan_gradle-test.txt
+  Yedige_Batyrkhan_linux-checks.txt
+  Yedige_Batyrkhan_linux-report-run.txt
+  Yedige_Batyrkhan_local-api-curl.txt
+  Yedige_Batyrkhan_local-app.log
+  Yedige_Batyrkhan_local-final-api-curl.txt
+  Yedige_Batyrkhan_local-persistence.txt
+  Yedige_Batyrkhan_local-start.txt
+  Yedige_Batyrkhan_postgres-init.txt
+  Yedige_Batyrkhan_postgres-version.txt
+  Yedige_Batyrkhan_registry-digests.json
+  Yedige_Batyrkhan_wrapper-generation.txt
+  junit/
+    TEST-kz.iitu.yedige.studentapi.StudentApiIntegrationTest.xml
+    TEST-kz.iitu.yedige.studentapi.StudentServiceTest.xml
+gradle/
+  wrapper/
+    gradle-wrapper.jar
+    gradle-wrapper.properties
+gradle.properties
+gradlew
+gradlew.bat
+logs/
+  Yedige_Batyrkhan_system_report.log
+scripts/
+  Yedige_Batyrkhan_bootstrap_local.sh
+  Yedige_Batyrkhan_configure_jenkins.py
+  Yedige_Batyrkhan_init_env.sh
+  Yedige_Batyrkhan_jenkins_api.py
+  Yedige_Batyrkhan_jenkins_login.sh
+  Yedige_Batyrkhan_local.sh
+  Yedige_Batyrkhan_system_report.sh
+  Yedige_Batyrkhan_verify_api.py
+  Yedige_Batyrkhan_verify_docker.sh
+settings.gradle
+src/
+  main/
+    java/
+      kz/
+        iitu/
+          yedige/
+            studentapi/
+              ApiExceptionHandler.java
+              InfoController.java
+              Student.java
+              StudentApiApplication.java
+              StudentController.java
+              StudentNotFoundException.java
+              StudentRepository.java
+              StudentRequest.java
+              StudentResponse.java
+              StudentService.java
+    resources/
+      application.yml
+      db/
+        migration/
+          V1__create_students.sql
+  test/
+    java/
+      kz/
+        iitu/
+          yedige/
+            studentapi/
+              StudentApiIntegrationTest.java
+              StudentServiceTest.java

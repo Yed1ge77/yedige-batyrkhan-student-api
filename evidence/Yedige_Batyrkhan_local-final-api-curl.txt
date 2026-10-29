@@ -1,0 +1,125 @@
+Started: 2026-10-30T01:58:28+0500
+
+$ curl -i -X GET http://127.0.0.1:8081/actuator/health
+HTTP/1.1 200 
+Content-Type: application/vnd.spring-boot.actuator.v3+json
+Transfer-Encoding: chunked
+Date: Thu, 29 Oct 2026 20:58:28 GMT
+
+{"status":"UP"}
+
+$ curl -i -X GET http://127.0.0.1:8081/api/info
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 29 Oct 2026 20:58:28 GMT
+
+{"student":"Batyrkhan Yedige Yerlanuly","university":"IITU","studentId":"38419","group":"IT2-2302","version":"1.0.1"}
+
+$ curl -i -X POST http://127.0.0.1:8081/api/students --data {"firstName": "Batyrkhan", "lastName": "Yedige", "email": "yedige.38419.14404aac@example.com", "groupName": "IT2-2302"}
+HTTP/1.1 201 
+Location: /api/students/6
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 29 Oct 2026 20:58:28 GMT
+
+{"id":6,"firstName":"Batyrkhan","lastName":"Yedige","email":"yedige.38419.14404aac@example.com","groupName":"IT2-2302"}
+
+$ curl -i -X GET http://127.0.0.1:8081/api/students
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 29 Oct 2026 20:58:28 GMT
+
+[{"id":5,"firstName":"Batyrkhan","lastName":"Yedige","email":"persist.38419.9a51096b@example.com","groupName":"IT2-2302"},{"id":6,"firstName":"Batyrkhan","lastName":"Yedige","email":"yedige.38419.14404aac@example.com","groupName":"IT2-2302"}]
+
+$ curl -i -X GET http://127.0.0.1:8081/api/students/6
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 29 Oct 2026 20:58:28 GMT
+
+{"id":6,"firstName":"Batyrkhan","lastName":"Yedige","email":"yedige.38419.14404aac@example.com","groupName":"IT2-2302"}
+
+$ curl -i -X POST http://127.0.0.1:8081/api/students --data {"firstName": "Batyrkhan", "lastName": "Yedige", "email": "yedige.38419.14404aac@example.com", "groupName": "IT2-2302"}
+HTTP/1.1 409 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 29 Oct 2026 20:58:28 GMT
+
+{"timestamp":"2026-10-29T20:58:28.872121655Z","status":409,"error":"Conflict","message":"A student with this email already exists","path":"/api/students","fields":{}}
+
+$ curl -i -X PUT http://127.0.0.1:8081/api/students/6 --data {"firstName": "Batyrkhan", "lastName": "Yedige", "email": "yedige.38419.14404aac@example.com", "groupName": "IT2-2302-UPDATED"}
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 29 Oct 2026 20:58:28 GMT
+
+{"id":6,"firstName":"Batyrkhan","lastName":"Yedige","email":"yedige.38419.14404aac@example.com","groupName":"IT2-2302-UPDATED"}
+
+$ curl -i -X POST http://127.0.0.1:8081/api/students --data {"firstName": "", "lastName": "Yedige", "email": "invalid", "groupName": "IT2-2302-UPDATED"}
+HTTP/1.1 400 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 29 Oct 2026 20:58:29 GMT
+Connection: close
+
+{"timestamp":"2026-10-29T20:58:29.025108338Z","status":400,"error":"Bad Request","message":"Request validation failed","path":"/api/students","fields":{"email":"must be a well-formed email address","firstName":"must not be blank"}}
+
+$ curl -i -X POST http://127.0.0.1:8081/api/students --data {"firstName": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "lastName": "Yedige", "email": "yedige.38419.14404aac@example.com", "groupName": "IT2-2302-UPDATED"}
+HTTP/1.1 400 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 29 Oct 2026 20:58:29 GMT
+Connection: close
+
+{"timestamp":"2026-10-29T20:58:29.053782992Z","status":400,"error":"Bad Request","message":"Request validation failed","path":"/api/students","fields":{"firstName":"size must be between 0 and 100"}}
+
+$ curl -i -X DELETE http://127.0.0.1:8081/api/students/6
+HTTP/1.1 204 
+Date: Thu, 29 Oct 2026 20:58:29 GMT
+
+
+
+$ curl -i -X GET http://127.0.0.1:8081/api/students/6
+HTTP/1.1 404 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 29 Oct 2026 20:58:29 GMT
+
+{"timestamp":"2026-10-29T20:58:29.128940719Z","status":404,"error":"Not Found","message":"Student 6 was not found","path":"/api/students/6","fields":{}}
+
+$ curl -i -X GET http://127.0.0.1:8081/api/students/999999999
+HTTP/1.1 404 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 29 Oct 2026 20:58:29 GMT
+
+{"timestamp":"2026-10-29T20:58:29.147489969Z","status":404,"error":"Not Found","message":"Student 999999999 was not found","path":"/api/students/999999999","fields":{}}
+
+$ curl -i -X PUT http://127.0.0.1:8081/api/students/999999999 --data {"firstName": "Batyrkhan", "lastName": "Yedige", "email": "yedige.38419.14404aac@example.com", "groupName": "IT2-2302-UPDATED"}
+HTTP/1.1 404 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 29 Oct 2026 20:58:29 GMT
+
+{"timestamp":"2026-10-29T20:58:29.169702541Z","status":404,"error":"Not Found","message":"Student 999999999 was not found","path":"/api/students/999999999","fields":{}}
+
+$ curl -i -X DELETE http://127.0.0.1:8081/api/students/999999999
+HTTP/1.1 404 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 29 Oct 2026 20:58:29 GMT
+
+{"timestamp":"2026-10-29T20:58:29.184922717Z","status":404,"error":"Not Found","message":"Student 999999999 was not found","path":"/api/students/999999999","fields":{}}
+
+$ curl -i -X GET http://127.0.0.1:8081/api/students/not-a-number
+HTTP/1.1 400 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 29 Oct 2026 20:58:29 GMT
+Connection: close
+
+{"timestamp":"2026-10-29T20:58:29.204315275Z","status":400,"error":"Bad Request","message":"Malformed JSON or invalid path parameter","path":"/api/students/not-a-number","fields":{}}
+
+PASS: 15 real curl requests; CRUD, validation, duplicate email, missing student, health and identity

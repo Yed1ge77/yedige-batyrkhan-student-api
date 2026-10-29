@@ -1,0 +1,30 @@
+PASS Bash syntax scripts/Yedige_Batyrkhan_bootstrap_local.sh
+PASS Bash syntax scripts/Yedige_Batyrkhan_init_env.sh
+PASS Bash syntax scripts/Yedige_Batyrkhan_jenkins_login.sh
+PASS Bash syntax scripts/Yedige_Batyrkhan_local.sh
+PASS Bash syntax scripts/Yedige_Batyrkhan_system_report.sh
+PASS Bash syntax scripts/Yedige_Batyrkhan_verify_docker.sh
+PASS Python syntax scripts/Yedige_Batyrkhan_audit.py
+PASS Python syntax scripts/Yedige_Batyrkhan_configure_jenkins.py
+PASS Python syntax scripts/Yedige_Batyrkhan_jenkins_api.py
+PASS Python syntax scripts/Yedige_Batyrkhan_verify_api.py
+PASS Git ignore .env
+PASS Git ignore .secrets/test-db-password
+PASS Git ignore .secrets/jenkins.netrc
+PASS Git ignore .ci-db.env
+PASS Docker context exclusion .env
+PASS Docker context exclusion .secrets
+PASS Docker context exclusion .tools
+PASS Docker context exclusion .ci*
+PASS Docker context exclusion .gradle-ci/
+PASS exact secret-value scan of 80 project files; values not printed
+PASS exact secret-value scan across 55 historical Git blobs
+PASS no real .env, .secrets or .tools tracked
+PASS merge resolved and README contains no conflict markers
+PASS system report permissions744 and identical final README backup
+PASS 252 local Markdown links resolve
+PASS all80 defense questions; 116 DOCX matrix rows plus17 additional requirements
+PASS evidence/junit: 9 tests, no failures/errors/skips
+PASS evidence/junit-recovery: 10 tests, no failures/errors/skips
+PASS final HTTP transcript contains15 real curl requests
+LIMIT: Docker execution, remote publication, Jenkins builds and SCM automation remain blocked; not reported as passed

@@ -1,0 +1,9 @@
+NATIVE PostgreSQL check; this is NOT Docker volume evidence.
+Before app + PostgreSQL restart: {"id":5,"firstName":"Batyrkhan","lastName":"Yedige","email":"persist.38419.9a51096b@example.com","groupName":"IT2-2302"}
+waiting for server to shut down.... done
+server stopped
+waiting for server to start.... done
+server started
+{"student":"Batyrkhan Yedige Yerlanuly","university":"IITU","studentId":"38419","group":"IT2-2302","version":"1.0.1"}
+After app + PostgreSQL restart: {"id":5,"firstName":"Batyrkhan","lastName":"Yedige","email":"persist.38419.9a51096b@example.com","groupName":"IT2-2302"}
+PASS: same row after native service restart

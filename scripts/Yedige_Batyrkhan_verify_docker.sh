@@ -20,8 +20,7 @@ wait_api() {
   return 1
 }
 wait_api
-curl -fsS http://127.0.0.1:8081/api/info
-printf '\n'
+curl -fsS http://127.0.0.1:8081/api/info | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["version"] == "1.0.0", d; print(d)'
 docker compose ps
 docker compose exec -T app sh -c 'id; java -version; pwd'
 app_id=$(docker compose ps -q app)
@@ -34,8 +33,7 @@ wait_api
 APP_VERSION=1.0.1 docker compose build
 docker compose up -d --wait --wait-timeout 120
 wait_api
-curl -fsS http://127.0.0.1:8081/api/info
-printf '\n'
+curl -fsS http://127.0.0.1:8081/api/info | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["version"] == "1.0.1", d; print(d)'
 docker image inspect "$image" --format 'Rebuilt ID={{.Id}} Created={{.Created}} Size={{.Size}} User={{.Config.User}}'
 docker tag "$image" yedige-batyrkhan-student-api:v1.0-yedige-batyrkhan-38419
 python3 scripts/Yedige_Batyrkhan_verify_api.py

@@ -42,13 +42,14 @@ def main():
     assert call('PUT', f'/api/students/{student_id}', 200, student)['groupName'] == 'IT2-2302-UPDATED'
     invalid = dict(student, firstName='', email='invalid')
     assert 'email' in call('POST', '/api/students', 400, invalid)['fields']
+    assert 'firstName' in call('POST', '/api/students', 400, dict(student, firstName='X' * 101))['fields']
     call('DELETE', f'/api/students/{student_id}', 204)
     call('GET', f'/api/students/{student_id}', 404)
     call('GET', '/api/students/999999999', 404)
     call('PUT', '/api/students/999999999', 404, student)
     call('DELETE', '/api/students/999999999', 404)
     call('GET', '/api/students/not-a-number', 400)
-    records.append('PASS: 15 real curl requests; CRUD, validation, duplicate email, missing student, health and identity')
+    records.append(f'PASS: {len(records) - 1} real curl requests; CRUD, validation, duplicate email, missing student, health and identity')
     OUT.write_text('\n\n'.join(records) + '\n')
     print(records[-1])
     print('Evidence:', OUT)

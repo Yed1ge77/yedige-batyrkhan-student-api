@@ -1,0 +1,30 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.6/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :bootBuildInfo
+> Task :compileJava
+> Task :processResources
+> Task :classes
+> Task :compileTestJava
+> Task :processTestResources NO-SOURCE
+> Task :testClasses
+
+> Task :test
+
+StudentNormalizationTest > normalizesPersonalEmail() FAILED
+    org.opentest4j.AssertionFailedError at StudentNormalizationTest.java:11
+
+1 test completed, 1 failed
+
+> Task :test FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///home/batyr/devops/yedige-batyrkhan-student-api/.tools/ci-recovery/build/reports/tests/test/index.html
+
+* Try:
+> Run with --scan to get full insights.
+
+BUILD FAILED in 36s
+5 actionable tasks: 5 executed

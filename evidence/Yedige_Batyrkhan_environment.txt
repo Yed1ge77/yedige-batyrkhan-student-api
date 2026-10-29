@@ -1,0 +1,39 @@
+[os]
+Linux Liverpool96 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+[git]
+git version 2.43.0
+
+[java]
+openjdk version "21.0.12.1" 2026-08-18
+OpenJDK Runtime Environment (build 21.0.12.1+1-1-24.04.4-Ubuntu)
+OpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-24.04.4-Ubuntu, mixed mode, sharing)
+
+[docker]
+Docker version 29.9.1, build dfc520d
+
+[compose]
+Docker Compose version v5.6.0
+
+[github_cli]
+gh version 2.103.3 (2026-10-26)
+https://github.com/cli/cli/releases/tag/v2.103.3
+
+[ports]
+State  Recv-Q Send-Q      Local Address:Port  Peer Address:PortProcess
+LISTEN 0      4096           127.0.0.54:53         0.0.0.0:*          
+LISTEN 0      4096            127.0.0.1:22         0.0.0.0:*          
+LISTEN 0      128             127.0.0.1:43207      0.0.0.0:*          
+LISTEN 0      200             127.0.0.1:55432      0.0.0.0:*          
+LISTEN 0      4096        127.0.0.53%lo:53         0.0.0.0:*          
+LISTEN 0      1000       10.255.255.254:53         0.0.0.0:*          
+LISTEN 0      50     [::ffff:127.0.0.1]:8080             *:*          
+
+[disk]
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  5.6G  951G   1% /
+
+[memory]
+               total        used        free      shared  buff/cache   available
+Mem:           3.7Gi       1.3Gi       381Mi        29Mi       2.2Gi       2.4Gi
+Swap:          1.0Gi          0B       1.0Gi
