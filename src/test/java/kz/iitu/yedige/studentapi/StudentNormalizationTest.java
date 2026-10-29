@@ -7,7 +7,7 @@ class StudentNormalizationTest {
     @Test void normalizesPersonalEmail() {
         var student = new Student(new StudentRequest("Batyrkhan", "Yedige",
             "  Batyrkhan.Yedige@EXAMPLE.COM  ", "IT2-2302"));
-        // Controlled failure on an isolated branch, never merged to main.
-        assertEquals("WRONG-EXPECTED-EMAIL", student.getEmail());
+        // Correct contract: email is trimmed and normalized to lower case.
+        assertEquals("batyrkhan.yedige@example.com", student.getEmail());
     }
 }
