@@ -1,0 +1,55 @@
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	docs/
+	evidence/Yedige_Batyrkhan_environment.txt
+	evidence/Yedige_Batyrkhan_git-conflict.txt
+	evidence/Yedige_Batyrkhan_gradle-missing-jdk.txt
+	evidence/Yedige_Batyrkhan_gradle-test.txt
+	evidence/Yedige_Batyrkhan_local-api-curl.txt
+	evidence/Yedige_Batyrkhan_local-app.log
+	evidence/Yedige_Batyrkhan_postgres-init.txt
+	evidence/Yedige_Batyrkhan_postgres-version.txt
+	evidence/Yedige_Batyrkhan_wrapper-generation.txt
+	evidence/junit/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+diff --cc README.md
+index a2c817b,e13237d..0000000
+--- a/README.md
++++ b/README.md
+@@@ -4,6 -4,6 +4,10 @@@ Batyrkhan Yedige Yerlanuly — IT2-230
+  
+  Java Spring Boot CRUD API with PostgreSQL, Docker Compose and Jenkins.
+  
+++<<<<<<< HEAD
+ +Documentation status: reproducible API demonstration reviewed by Yedige Batyrkhan.
+++=======
++ Documentation status: Russian oral defense and architecture prepared by Yedige Batyrkhan.
+++>>>>>>> feature/yedige-batyrkhan-documentation
+  
+  CRUD change by Batyrkhan Yedige: transactional Student service, DTO validation, Flyway schema and REST controller.
+# Yedige Batyrkhan Student API
+
+Batyrkhan Yedige Yerlanuly — IT2-2302 — Student ID 38419 — IITU.
+
+Java Spring Boot CRUD API with PostgreSQL, Docker Compose and Jenkins.
+
+<<<<<<< HEAD
+Documentation status: reproducible API demonstration reviewed by Yedige Batyrkhan.
+=======
+Documentation status: Russian oral defense and architecture prepared by Yedige Batyrkhan.
+>>>>>>> feature/yedige-batyrkhan-documentation
+
+CRUD change by Batyrkhan Yedige: transactional Student service, DTO validation, Flyway schema and REST controller.
