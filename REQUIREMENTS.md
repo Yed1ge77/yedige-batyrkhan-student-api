@@ -1,6 +1,6 @@
 # Матрица требований
 
-Статус: **все обязательные требования выполнены и проверены. Jenkins1SUCCESS →2FAILURE →3SUCCESS; automatic6SUCCESS. Release tag v1.0-yedige-batyrkhan фиксирует итог.**
+Статус: **все обязательные требования выполнены и проверены. Jenkins1SUCCESS →2FAILURE →3SUCCESS; automatic6SUCCESS; дополнительный readiness failure7 исправлен и подтверждён automatic8SUCCESS. Release tag v1.0-yedige-batyrkhan фиксирует итог.**
 
 Источник: весь DOCX, включая таблицу и 80 вопросов; [полная XML-выгрузка](evidence/Yedige_Batyrkhan_assignment.txt). Пример Asan Abai заменён персональными данными по заданию.
 
@@ -144,3 +144,5 @@
 | U15 | Сохранность данных после restart сервисов | Native и Docker записи сохранены; контейнеры пересозданы без удаления volume | Сравнение полного JSON до и после | [Docker persistence](evidence/Yedige_Batyrkhan_docker-persistence.txt) | Проверено |
 | U16 | Настоящий env не в Git/build context, .env.example | Random .env 600; placeholder example | git check-ignore и exact secret value scan | [safety audit](evidence/Yedige_Batyrkhan_safety-audit.txt) | Проверено |
 | U17 | Финальный release tag только после всех проверок | Annotated v1.0-yedige-batyrkhan | git show и remote refs | [GitHub tag](https://github.com/Yed1ge77/yedige-batyrkhan-student-api/tree/v1.0-yedige-batyrkhan) | Проверено при финализации |
+
+Дополнительная устойчивость: финальный прогон7 выявил гонку Unix-socket readiness PostgreSQL; CI и Compose используют TCP probe. Автоматический8SUCCESS,9/9 tests. [Доказательство](evidence/Yedige_Batyrkhan_jenkins-readiness-recovery.json); [official entrypoint](evidence/Yedige_Batyrkhan_postgres-readiness-source.txt).

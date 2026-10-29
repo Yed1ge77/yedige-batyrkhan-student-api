@@ -8,7 +8,7 @@ Documentation status: reproducible API demonstration, Russian oral defense and a
 
 CRUD change by Batyrkhan Yedige: transactional Student service, DTO validation, Flyway schema and REST controller; PostgreSQL tests cover create/read/update/delete and errors.
 
-Проверено: 9 тестов main с настоящим PostgreSQL,15 curl-запросов native и15 в Docker, persistence после пересоздания контейнеров без удаления volume, Linux и настоящий Git merge conflict. Docker версии1.0.0→1.0.1, UID/GID10001. GitHub опубликован. **Jenkins: #1 SUCCESS → #2 ожидаемый FAILURE → #3 SUCCESS; #4/#5 baseline SUCCESS; #6 автоматически от SCM — SUCCESS.** Автоматический commit54f3a0e подтверждён SCMTriggerCause и точным SHA. Все обязательные требования закрыты; [полный отчёт](docs/report.md), [матрица](REQUIREMENTS.md). Release tag: [v1.0-yedige-batyrkhan](https://github.com/Yed1ge77/yedige-batyrkhan-student-api/tree/v1.0-yedige-batyrkhan).
+Проверено: 9 тестов main с настоящим PostgreSQL,15 curl-запросов native и15 в Docker, persistence после пересоздания контейнеров без удаления volume, Linux и настоящий Git merge conflict. Docker версии1.0.0→1.0.1, UID/GID10001. GitHub опубликован. **Jenkins: #1 SUCCESS → #2 ожидаемый FAILURE → #3 SUCCESS; #4/#5 baseline SUCCESS; #6 автоматически от SCM — SUCCESS.** Автоматический commit54f3a0e подтверждён SCMTriggerCause и точным SHA. Дополнительный финальный прогон #7 выявил readiness race PostgreSQL; TCP readiness исправлена, автоматический #8 — SUCCESS,9/9 tests. Все обязательные требования закрыты; [полный отчёт](docs/report.md), [матрица](REQUIREMENTS.md). Release tag: [v1.0-yedige-batyrkhan](https://github.com/Yed1ge77/yedige-batyrkhan-student-api/tree/v1.0-yedige-batyrkhan).
 
 ## Запуск через Docker Compose
 

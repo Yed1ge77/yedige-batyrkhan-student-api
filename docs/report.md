@@ -79,12 +79,16 @@ Checkout → Build → Test → Docker Build → Verify. Docker-capable Built-In
 | #4 | main, исходный baseline | SUCCESS | 9 passed | [log](../evidence/Yedige_Batyrkhan_jenkins-build-4-console.txt) |
 | #5 | main, baseline исправленного SCM | SUCCESS | 9 passed | [log](../evidence/Yedige_Batyrkhan_jenkins-build-5-console.txt) |
 | #6 | main, **SCM polling** | **SUCCESS** | 9 passed | [log](../evidence/Yedige_Batyrkhan_jenkins-build-6-console.txt) |
+| #7 | main, SCM polling, финальный прогон | FAILURE инфраструктурный | Тесты не стартовали: readiness race | [log](../evidence/Yedige_Batyrkhan_jenkins-build-7-console.txt) |
+| #8 | main, SCM polling, TCP readiness fix | SUCCESS | 9 passed | [log](../evidence/Yedige_Batyrkhan_jenkins-build-8-console.txt) |
 
 Контролируемый failure: тест ожидал WRONG-EXPECTED-EMAIL вместо реально нормализованного batyrkhan.yedige@example.com. [Реальная разница failure→fix](../evidence/Yedige_Batyrkhan_ci-failure-fix-diff.txt). Build2 опубликовал JUnit и пропустил Docker Build/Verify; Build3 подтвердил исправление. Main намеренно не ломался.
 
 Polling первоначально не выбирал ветку из переменной ${BRANCH} в сохранённом SCM. Definition закреплён на main, параметр BRANCH разрешается явно в Checkout. Для смены сохранённых SCM выполнен честно обозначенный ручной baseline5; ручные4/5 не засчитываются за automation. [Диагностический No changes](../evidence/Yedige_Batyrkhan_jenkins-scm-parameter-diagnostic.txt), [разбор](ci-observation.md).
 
 **Automation доказан:** новый содержательный commit **54f3a0e7c6505930c51de5217a1dea39a4c60ec1**, git push, затем только GET-наблюдение. Poll log содержит Changes found и этот SHA. Build6 имеет **hudson.triggers.SCMTrigger$SCMTriggerCause**, Started by an SCM change; checkout SHA совпадает; UserIdCause отсутствует. [Polling log](../evidence/Yedige_Batyrkhan_jenkins-scm-polling.txt), [build6 JSON](../evidence/Yedige_Batyrkhan_jenkins-build-6.json), [test summary](../evidence/Yedige_Batyrkhan_jenkins-build-6-tests.json), [итоговые assertions](../evidence/Yedige_Batyrkhan_jenkins-final-verification.json), [история](../evidence/Yedige_Batyrkhan_jenkins-history.json).
+
+Дополнительный финальный прогон7 обнаружил гонку готовности PostgreSQL: Unix-socket pg_isready увидел временный init-сервер перед его перезапуском. Это отдельный инфраструктурный сбой, не намеренный test failure2; тесты7 не стартовали и JUnit XML отсутствовал. Readiness в CI и Compose изменена на TCP127.0.0.1. [Источник: entrypoint реального official image](../evidence/Yedige_Batyrkhan_postgres-readiness-source.txt) подтверждает listen_addresses='' у временного сервера. Автоматический build8 на fix commit7c91df2 прошёл все9 тестов и5 stages, [JSON проверки исправления](../evidence/Yedige_Batyrkhan_jenkins-readiness-recovery.json). Релиз не создавался на неуспешном7.
 
 ## Финальный контроль и материалы
 

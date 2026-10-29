@@ -1,0 +1,22 @@
+{
+  "infrastructureFailureBuild": 7,
+  "rootCause": "Unix socket probe accepted temporary PostgreSQL init server",
+  "fix": "pg_isready -h 127.0.0.1 waits for final TCP server",
+  "recoveryBuild": 8,
+  "result": "SUCCESS",
+  "tests": {
+    "_class": "hudson.tasks.junit.TestResult",
+    "failCount": 0,
+    "passCount": 9,
+    "skipCount": 0
+  },
+  "causes": [
+    {
+      "_class": "hudson.triggers.SCMTrigger$SCMTriggerCause",
+      "shortDescription": "Started by an SCM change"
+    }
+  ],
+  "revisions": [
+    "7c91df271d131616a082e2bf281a95d854aecbbe"
+  ]
+}

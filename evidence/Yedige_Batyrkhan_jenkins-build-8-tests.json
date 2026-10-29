@@ -1,0 +1,72 @@
+{
+  "_class": "hudson.tasks.junit.TestResult",
+  "failCount": 0,
+  "passCount": 9,
+  "skipCount": 0,
+  "suites": [
+    {
+      "cases": [
+        {
+          "className": "kz.iitu.yedige.studentapi.StudentApiIntegrationTest",
+          "errorDetails": null,
+          "name": "duplicateEmailReturns409()",
+          "status": "PASSED"
+        },
+        {
+          "className": "kz.iitu.yedige.studentapi.StudentApiIntegrationTest",
+          "errorDetails": null,
+          "name": "healthAndPersonalInfoAreAvailable()",
+          "status": "PASSED"
+        },
+        {
+          "className": "kz.iitu.yedige.studentapi.StudentApiIntegrationTest",
+          "errorDetails": null,
+          "name": "malformedJsonAndIdReturn400()",
+          "status": "PASSED"
+        },
+        {
+          "className": "kz.iitu.yedige.studentapi.StudentApiIntegrationTest",
+          "errorDetails": null,
+          "name": "invalidFieldsReturn400()",
+          "status": "PASSED"
+        },
+        {
+          "className": "kz.iitu.yedige.studentapi.StudentApiIntegrationTest",
+          "errorDetails": null,
+          "name": "missingStudentReturns404ForAllOperations()",
+          "status": "PASSED"
+        },
+        {
+          "className": "kz.iitu.yedige.studentapi.StudentApiIntegrationTest",
+          "errorDetails": null,
+          "name": "fullCrudUsesPostgresql()",
+          "status": "PASSED"
+        }
+      ],
+      "name": "kz.iitu.yedige.studentapi.StudentApiIntegrationTest"
+    },
+    {
+      "cases": [
+        {
+          "className": "kz.iitu.yedige.studentapi.StudentServiceTest",
+          "errorDetails": null,
+          "name": "missingStudentHasClearError()",
+          "status": "PASSED"
+        },
+        {
+          "className": "kz.iitu.yedige.studentapi.StudentServiceTest",
+          "errorDetails": null,
+          "name": "updateChangesExistingStudentAndNormalizesEmail()",
+          "status": "PASSED"
+        },
+        {
+          "className": "kz.iitu.yedige.studentapi.StudentServiceTest",
+          "errorDetails": null,
+          "name": "deleteMissingStudentNeverDeletesOtherRows()",
+          "status": "PASSED"
+        }
+      ],
+      "name": "kz.iitu.yedige.studentapi.StudentServiceTest"
+    }
+  ]
+}

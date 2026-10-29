@@ -18,12 +18,12 @@ PASS Docker context exclusion .tools
 PASS Docker context exclusion .ci*
 PASS Docker context exclusion .gradle-ci/
 PASS local Jenkins credential file permissions600 and Git/context exclusions
-PASS exact secret-value scan of 114 project files; values not printed
-PASS exact secret-value scan across 142 historical Git blobs
+PASS exact secret-value scan of 121 project files; values not printed
+PASS exact secret-value scan across 164 historical Git blobs
 PASS no real .env, .secrets or .tools tracked
 PASS merge resolved and README contains no conflict markers
 PASS system report permissions744 and identical final README backup
-PASS 337 local Markdown links resolve
+PASS 343 local Markdown links resolve
 PASS all80 defense questions; 116 DOCX matrix rows plus17 additional requirements
 PASS evidence/junit: 9 tests, no failures/errors/skips
 PASS evidence/junit-recovery: 10 tests, no failures/errors/skips

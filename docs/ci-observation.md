@@ -20,3 +20,5 @@ Build #5: ручной baseline исправленного main, SUCCESS, 9 те
 Итог: build #6 автоматически стартовал от SCM change и завершился SUCCESS,9 tests passed. SHA 54f3a0e7c6505930c51de5217a1dea39a4c60ec1; cause SCMTriggerCause, UserIdCause отсутствует. Реальные JSON/Console/Polling evidence сохранены.
 
 Финальный автоматический build #7 выявил отдельную инфраструктурную гонку: Unix-socket pg_isready мог увидеть временный init-сервер official PostgreSQL image, который затем останавливался перед запуском основного сервера. Gradle Test ещё не начался, JUnit отсутствовал, Docker Build/Verify пропущены. Readiness в CI и Compose изменена на TCP127.0.0.1: временный init-сервер слушает только Unix socket, поэтому проверка ждёт основной TCP server. Этот незапланированный сбой не заменяет контролируемый test failure #2. Логи #7 сохранены отдельно; исправление проверяет следующий автоматический SCM build.
+
+Исправление readiness проверено: автоматический build #8 SUCCESS,9 tests passed, SHA7c91df2, SCMTriggerCause. Official entrypoint подтверждает отсутствие TCP у временного init-сервера; source excerpt и JSON recovery8 сохранены в evidence.
