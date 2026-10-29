@@ -9,3 +9,7 @@ build/
 *.key
 *.netrc
 __pycache__/
+
+.ci*
+
+.gradle-ci/
