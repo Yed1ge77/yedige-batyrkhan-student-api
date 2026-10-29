@@ -1,0 +1,11 @@
+.gradle/
+build/
+.tools/
+.secrets/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.netrc
+__pycache__/

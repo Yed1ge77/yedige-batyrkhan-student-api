@@ -1,0 +1,62 @@
+-rwxr--r-- 1 batyr batyr 491 Oct 30 01:48 scripts/Yedige_Batyrkhan_system_report.sh
+744 scripts/Yedige_Batyrkhan_system_report.sh
+total 4
+-rw-r--r-- 1 batyr batyr 225 Oct 30 01:48 Yedige_Batyrkhan_README.initial.md
+# Yedige Batyrkhan Student API
+
+Batyrkhan Yedige Yerlanuly — IT2-2302 — Student ID 38419 — IITU.
+
+Java Spring Boot CRUD API with PostgreSQL, Docker Compose and Jenkins.
+
+Documentation status: initial project structure.
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 01:41 ?        00:00:01 /sbin/init
+root           2       1  0 01:41 hvc0     00:00:00 /init
+root           3       2  0 01:41 hvc0     00:00:00 init-watcher
+root           7       2  0 01:41 hvc0     00:00:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+root          44       1  0 01:41 ?        00:00:00 /usr/lib/systemd/systemd-journald
+root         100       1  0 01:41 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+systemd+     110       1  0 01:41 ?        00:00:00 /usr/lib/systemd/systemd-resolved
+systemd+     111       1  0 01:41 ?        00:00:00 /usr/lib/systemd/systemd-timesyncd
+root         157       1  0 01:41 ?        00:00:00 /usr/sbin/cron -f -P
+message+     158       1  0 01:41 ?        00:00:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+jenkins      163       1 12 01:41 ?        00:00:52 /usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8080 --httpListenAddress=127.0.0.1
+root         178       1  0 01:41 ?        00:00:00 /usr/lib/systemd/systemd-logind
+root         185       1  0 01:41 ?        00:00:00 /usr/libexec/wsl-pro-service
+syslog       196       1  0 01:41 ?        00:00:00 /usr/sbin/rsyslogd -n -iNONE
+root         197       1  0 01:41 ?        00:00:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root         208       1  0 01:41 ?        00:00:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         221       1  0 01:41 tty1     00:00:00 /sbin/agetty -o -p -- \u --noclear - linux
+root         223       1  0 01:41 ?        00:00:01 /usr/bin/containerd
+root         315       1  0 01:41 ?        00:00:00 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+root         709       2  0 01:41 ?        00:00:00 /init
+root         710     709  0 01:41 ?        00:00:00 /init
+batyr        712     710  0 01:41 pts/0    00:00:00 -bash
+root         713       2  0 01:41 pts/1    00:00:00 /bin/login -f
+batyr        762       1  0 01:41 ?        00:00:00 /usr/lib/systemd/systemd --user
+batyr        763     762  0 01:41 ?        00:00:00 (sd-pam)
+batyr        787     713  0 01:41 pts/1    00:00:00 -bash
+root        1532       2  0 01:45 ?        00:00:00 /init
+root        1534    1532  0 01:45 ?        00:00:00 /init
+batyr       1540    1534  0 01:45 pts/2    00:00:00 -bash
+batyr       1786    1540  0 01:45 pts/2    00:00:00 node /home/batyr/.nvm/versions/node/v24.22.0/bin/codex --sandbox danger-full-access --ask-for-approval never
+batyr       1793    1786  5 01:45 pts/2    00:00:07 /home/batyr/.nvm/versions/node/v24.22.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex --sandbox danger-full-access --ask-for-approval never
+batyr       1801     762  0 01:45 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+batyr       1837    1793  4 01:45 ?        00:00:06 /home/batyr/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/bin/codex app-server --listen unix:// --analytics-default-enabled --managed-daemon
+batyr       1917    1793  0 01:45 ?        00:00:00 /home/batyr/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/bin/codex app-server daemon pid-update-loop
+batyr       1977    1793  0 01:45 pts/2    00:00:00 /init /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -NoProfile -NonInteractive -Command  $ErrorActionPreference = 'Stop' $out = [Console]::OpenStandardOutput() $utf8 = [System.Text.UTF8Encoding]::new($false) while ($null -ne [Console]::ReadLine()) {     $bytes = $utf8.GetBytes([string](Get-Clipboard -Raw))     $header = [BitConverter]::GetBytes([uint32]$bytes.Length)     $out.Write($header, 0, $header.Length)     $out.Write($bytes, 0, $bytes.Length)     $out.Flush() } 
+batyr       2065    1837  0 01:46 ?        00:00:00 /home/batyr/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/bin/codex-code-mode-host
+batyr       2220    1837  5 01:48 ?        00:00:00 curl -fsSL https://services.gradle.org/distributions/gradle-8.14.6-bin.zip -o .tools/gradle.zip
+batyr       2233    1837 11 01:48 ?        00:00:00 /bin/bash -c cat > .gitignore <<'EOF' .gradle/ build/ .tools/ .secrets/ .env .env.* !.env.example *.pem *.key *.netrc __pycache__/ EOF cat > README.md <<'EOF' # Yedige Batyrkhan Student API  Batyrkhan Yedige Yerlanuly — IT2-2302 — Student ID 38419 — IITU.  Java Spring Boot CRUD API with PostgreSQL, Docker Compose and Jenkins.  Documentation status: initial project structure. EOF cat > scripts/Yedige_Batyrkhan_system_report.sh <<'EOF' #!/bin/bash set -euo pipefail PROJECT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)" mkdir -p "$PROJECT_DIR/logs" {   echo 'Student: Batyrkhan Yedige Yerlanuly | IT2-2302 | 38419 | IITU'   date --iso-8601=seconds   printf 'Username: '; whoami   echo 'Operating system:'; cat /etc/os-release   echo 'Kernel:'; uname -sr   echo 'CPU:'; lscpu   echo 'Memory:'; free -h   echo 'Disk usage and available space:'; df -h } | tee "$PROJECT_DIR/logs/Yedige_Batyrkhan_system_report.log" EOF chmod 744 scripts/Yedige_Batyrkhan_system_report.sh cat > scripts/Yedige_Batyrkhan_jenkins_login.sh <<'EOF' #!/bin/bash set -euo pipefail cd "$(dirname "$0")/.." mkdir -p .secrets chmod 700 .secrets read -r -p 'Jenkins username: ' username read -r -s -p 'Jenkins password or API token (local input only): ' credential printf '\n' umask 077 printf 'machine 127.0.0.1 login %s password %s\n' "$username" "$credential" > .secrets/jenkins.netrc unset credential curl --fail --silent --netrc-file .secrets/jenkins.netrc http://127.0.0.1:8080/whoAmI/api/json printf '\n' EOF chmod 700 scripts/Yedige_Batyrkhan_jenkins_login.sh python3 - <<'PY' from pathlib import Path lines=Path('evidence/Yedige_Batyrkhan_assignment.txt').read_text().splitlines() rows=[]; section=''; i=0 for line in lines:  if line.startswith('Task '): section=line  elif line.startswith('Example of questions'): break  elif line and not line.startswith(('DevOps','Goal:','Part ',' Part ','Requirements:','Evidence:','Example:','asan-','├','└','On this','Create pipeline','Important:','6. ','To make','[TABLE]','Resource |')):   i+=1; rows.append(f'| D{i:03} | {section}: {line.replace("|","/")} | Запланировано | Проверка терминалом / API | evidence/ | Ожидает |') Path('REQUIREMENTS.md').write_text('# Матрица требований\n\nИсточник: полный DOCX, включая таблицу; дословная выгрузка: [assignment](evidence/Yedige_Batyrkhan_assignment.txt).\n\n| ID | Требование | Реализация | Проверка | Доказательство | Статус |\n|---|---|---|---|---|---|\n'+'\n'.join(rows)+'\n\nДополнительные требования пользователя: DTO/валидация, Flyway, ошибки JSON, health, PostgreSQL integration tests, non-root, persistence, публикация JUnit, timeout и безопасная очистка; также включаются в итоговый аудит.\n') PY cp README.md backups/Yedige_Batyrkhan_README.initial.md (cd /tmp && /home/batyr/devops/yedige-batyrkhan-student-api/scripts/Yedige_Batyrkhan_system_report.sh) > evidence/Yedige_Batyrkhan_linux-report-run.txt { ls -l scripts/Yedige_Batyrkhan_system_report.sh; stat -c '%a %n' scripts/Yedige_Batyrkhan_system_report.sh; ls -l backups; cmp README.md backups/Yedige_Batyrkhan_README.initial.md; cat backups/Yedige_Batyrkhan_README.initial.md; ps -ef; pgrep -a java; tail -5 logs/Yedige_Batyrkhan_system_report.log; tail -5 /var/log/syslog; } > evidence/Yedige_Batyrkhan_linux-checks.txt rg Yedige logs/Yedige_Batyrkhan_system_report.log > Yedige_Batyrkhan_log_analysis.txt git init -b main; git config user.name 'Batyrkhan Yedige Yerlanuly'; git config user.email '208401081+Yed1ge77@users.noreply.github.com'; git add .; git commit -m 'Initial commit: Batyrkhan Yedige Student API'; git switch -c feature/yedige-batyrkhan-crud
+batyr       2261    2233  0 01:48 ?        00:00:00 ps -ef
+163 /usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8080 --httpListenAddress=127.0.0.1
+none            1.9G     0  1.9G   0% /run/shm
+none            1.9G   80K  1.9G   1% /mnt/wslg/versions.txt
+none            1.9G   80K  1.9G   1% /mnt/wslg/doc
+C:\             237G  213G   25G  90% /mnt/c
+tmpfs           381M   20K  381M   1% /run/user/1000
+2026-10-30T01:46:43.989626+05:00 Liverpool96 systemd-resolved[110]: Clock change detected. Flushing caches.
+2026-10-30T01:46:57.126445+05:00 Liverpool96 systemd[762]: launchpadlib-cache-clean.service - Clean up old files in the Launchpadlib cache was skipped because of an unmet condition check (ConditionPathExists=/home/batyr/.launchpadlib/api.launchpad.net/cache).
+2026-10-30T01:47:15.059686+05:00 Liverpool96 systemd-resolved[110]: Clock change detected. Flushing caches.
+2026-10-30T01:47:25.572724+05:00 Liverpool96 wsl-pro-service[185]: #033[33mWARNING#033[0m Daemon: could not connect to Windows Agent: could not get address: could not read agent port file "/mnt/c/Users/77018/.ubuntupro/.address": open /mnt/c/Users/77018/.ubuntupro/.address: no such file or directory
+2026-10-30T01:47:46.132644+05:00 Liverpool96 systemd-resolved[110]: Clock change detected. Flushing caches.
