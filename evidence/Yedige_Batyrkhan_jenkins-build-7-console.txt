@@ -1,0 +1,141 @@
+Started by an SCM change
+Checking out git https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git into /var/lib/jenkins/workspace/Yedige_Batyrkhan_Student_API@script/39cba862431c134a792e757602207f21bf5b2ef1b86a8bc004bc14ce0521c563 to read Jenkinsfile
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Yedige_Batyrkhan_Student_API@script/39cba862431c134a792e757602207f21bf5b2ef1b86a8bc004bc14ce0521c563/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git # timeout=10
+Fetching upstream changes from https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+ > git fetch --tags --force --progress -- https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse origin/main^{commit} # timeout=10
+Checking out Revision d3e578875e31148f7e199085bed23d5ec856c395 (origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f d3e578875e31148f7e199085bed23d5ec856c395 # timeout=10
+Commit message: "Yedige Batyrkhan: finalize verified Jenkins automation, evidence and complete midterm report"
+ > git rev-list --no-walk 54f3a0e7c6505930c51de5217a1dea39a4c60ec1 # timeout=10
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/Yedige_Batyrkhan_Student_API
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timeout
+Timeout set to expire in 30 min
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] checkout
+[2026-10-29T22:09:47.965Z] The recommended git tool is: NONE
+[2026-10-29T22:09:47.966Z] No credentials specified
+[2026-10-29T22:09:47.967Z]  > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Yedige_Batyrkhan_Student_API/.git # timeout=10
+[2026-10-29T22:09:47.977Z] Fetching changes from the remote Git repository
+[2026-10-29T22:09:47.984Z]  > git config remote.origin.url https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git # timeout=10
+[2026-10-29T22:09:47.991Z] Fetching upstream changes from https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git
+[2026-10-29T22:09:47.992Z]  > git --version # timeout=10
+[2026-10-29T22:09:47.997Z]  > git --version # 'git version 2.43.0'
+[2026-10-29T22:09:47.997Z]  > git fetch --tags --force --progress -- https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-10-29T22:09:49.261Z]  > git rev-parse origin/main^{commit} # timeout=10
+[2026-10-29T22:09:49.269Z] Checking out Revision d3e578875e31148f7e199085bed23d5ec856c395 (origin/main)
+[2026-10-29T22:09:49.269Z]  > git config core.sparsecheckout # timeout=10
+[2026-10-29T22:09:49.274Z]  > git checkout -f d3e578875e31148f7e199085bed23d5ec856c395 # timeout=10
+[2026-10-29T22:09:49.295Z] Commit message: "Yedige Batyrkhan: finalize verified Jenkins automation, evidence and complete midterm report"
+[Pipeline] echo
+[2026-10-29T22:09:49.332Z] Batyrkhan Yedige Yerlanuly | IT2-2302 | 38419 | IITU
+[Pipeline] sh
+[2026-10-29T22:09:49.616Z] + java -version
+[2026-10-29T22:09:49.616Z] openjdk version "21.0.12.1" 2026-08-18
+[2026-10-29T22:09:49.616Z] OpenJDK Runtime Environment (build 21.0.12.1+1-1-24.04.4-Ubuntu)
+[2026-10-29T22:09:49.616Z] OpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-24.04.4-Ubuntu, mixed mode, sharing)
+[2026-10-29T22:09:49.616Z] + docker version --format {{.Server.Version}}
+[2026-10-29T22:09:49.869Z] 29.9.1
+[2026-10-29T22:09:49.869Z] + chmod +x gradlew
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] sh
+[2026-10-29T22:09:50.275Z] + id -u
+[2026-10-29T22:09:50.275Z] + id -g
+[2026-10-29T22:09:50.275Z] + docker run --rm --name yedige-***REDACTED***khan-ci-7-build -u 105:108 -v /var/lib/jenkins/workspace/Yedige_Batyrkhan_Student_API:/workspace -w /workspace -e GRADLE_USER_HOME=/workspace/.gradle-ci eclipse-temurin:21-jdk-jammy@sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69 ./gradlew --no-daemon clean assemble
+[2026-10-29T22:09:52.146Z] To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.6/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+[2026-10-29T22:09:54.013Z] Daemon will be stopped at the end of the build 
+[2026-10-29T22:10:06.125Z] > Task :clean
+[2026-10-29T22:10:06.125Z] > Task :bootBuildInfo
+[2026-10-29T22:10:08.613Z] > Task :compileJava
+[2026-10-29T22:10:08.613Z] > Task :processResources
+[2026-10-29T22:10:08.613Z] > Task :classes
+[2026-10-29T22:10:08.613Z] > Task :resolveMainClassName
+[2026-10-29T22:10:08.304Z] > Task :bootJar
+[2026-10-29T22:10:08.304Z] > Task :jar SKIPPED
+[2026-10-29T22:10:08.304Z] > Task :assemble
+[2026-10-29T22:10:08.304Z] 
+[2026-10-29T22:10:08.304Z] BUILD SUCCESSFUL in 19s
+[2026-10-29T22:10:08.305Z] 6 actionable tasks: 6 executed
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] withCredentials
+[2026-10-29T22:10:08.752Z] Masking supported pattern matches of $DB_PASSWORD
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T22:10:11.502Z] /var/run/postgresql:5432 - no response
+[Pipeline] }
+[Pipeline] // withCredentials
+Post stage
+[Pipeline] junit
+[2026-10-29T22:10:11.649Z] Recording test results
+[2026-10-29T22:10:11.654Z] No test report files were found. Configuration error?
+Error when executing always post condition:
+Also:   org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: e0983722-deee-467f-adaf-436cfc3a55dd
+hudson.AbortException: No test report files were found. Configuration error?
+	at PluginClassLoader for junit//hudson.tasks.junit.JUnitParser$ParseResultCallable.invoke(JUnitParser.java:253)
+	at hudson.FilePath.act(FilePath.java:1226)
+	at hudson.FilePath.act(FilePath.java:1209)
+	at PluginClassLoader for junit//hudson.tasks.junit.JUnitParser.parseResult(JUnitParser.java:146)
+	at PluginClassLoader for junit//hudson.tasks.junit.JUnitResultArchiver.parse(JUnitResultArchiver.java:181)
+	at PluginClassLoader for junit//hudson.tasks.junit.JUnitResultArchiver.parseAndSummarize(JUnitResultArchiver.java:306)
+	at PluginClassLoader for junit//hudson.tasks.junit.JUnitResultArchiver.parseAndSummarize(JUnitResultArchiver.java:276)
+	at PluginClassLoader for junit//hudson.tasks.junit.pipeline.JUnitResultsStepExecution.run(JUnitResultsStepExecution.java:62)
+	at PluginClassLoader for junit//hudson.tasks.junit.pipeline.JUnitResultsStepExecution.run(JUnitResultsStepExecution.java:27)
+	at PluginClassLoader for workflow-step-api//org.jenkinsci.plugins.workflow.steps.SynchronousNonBlockingStepExecution.lambda$start$0(SynchronousNonBlockingStepExecution.java:49)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Docker Build)
+Stage "Docker Build" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Verify)
+Stage "Verify" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] sh
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // timeout
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 2
+Finished: FAILURE

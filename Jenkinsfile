@@ -44,10 +44,10 @@ docker run -d --name "$CI_DB" --network "$CI_NETWORK" --network-alias db \
   --label owner=yedige-batyrkhan-student-api -e POSTGRES_PASSWORD \
   -e POSTGRES_USER="$DB_USER" -e POSTGRES_DB=student_api_test postgres:16.15-bookworm@sha256:e8a07d2c7579b038938cdba6c539e580e5001caf9ea203d397b5cc83e76bd938 >/dev/null
 for attempt in {1..60}; do
-  if docker exec "$CI_DB" pg_isready -U "$DB_USER" -d student_api_test >/dev/null 2>&1; then break; fi
+  if docker exec "$CI_DB" pg_isready -h 127.0.0.1 -U "$DB_USER" -d student_api_test >/dev/null 2>&1; then break; fi
   sleep 1
 done
-docker exec "$CI_DB" pg_isready -U "$DB_USER" -d student_api_test
+docker exec "$CI_DB" pg_isready -h 127.0.0.1 -U "$DB_USER" -d student_api_test
 docker run --rm --name "${CI_DB}-test" --network "$CI_NETWORK" -u "$(id -u):$(id -g)" \
   -v "$PWD:/workspace" -w /workspace -e GRADLE_USER_HOME=/workspace/.gradle-ci \
   -e DB_PASSWORD -e DB_USER -e DB_URL=jdbc:postgresql://db:5432/student_api_test \
