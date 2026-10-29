@@ -52,7 +52,7 @@ def main():
     remote = ET.SubElement(ET.SubElement(scm, 'userRemoteConfigs'), 'hudson.plugins.git.UserRemoteConfig')
     ET.SubElement(remote, 'url').text = 'https://github.com/Yed1ge77/yedige-batyrkhan-student-api.git'
     branch = ET.SubElement(ET.SubElement(scm, 'branches'), 'hudson.plugins.git.BranchSpec')
-    ET.SubElement(branch, 'name').text = '${BRANCH}'
+    ET.SubElement(branch, 'name').text = 'main'
     ET.SubElement(scm, 'doGenerateSubmoduleConfigurations').text = 'false'
     ET.SubElement(scm, 'submoduleCfg', {'class': 'empty-list'})
     ET.SubElement(scm, 'extensions')

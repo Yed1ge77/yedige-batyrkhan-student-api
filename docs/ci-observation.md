@@ -10,3 +10,5 @@
 В CLI проверки Jenkinsfile исправлено поле multipart: validator принимает текстовый параметр jenkinsfile; file upload с filename возвращал No Jenkinsfile specified. Текущий файл успешно проходит встроенный validator.
 
 Этот содержательный commit добавляет фактические наблюдения, evidence и исправление CLI. После его push следующая проверка выполняется только SCM polling; ручной build API не вызывается. У автоматического build нужно проверить SCMTriggerCause и точный SHA этого commit. Результат эксперимента фиксируется отдельно после завершения.
+
+Polling диагностика: переменная ${BRANCH} в SCM definition возвращала No changes при новом remote main. Job definition закреплён на main; тестовая ветка выбирается явно параметром в Checkout Jenkinsfile. Это делает SCM polling однозначным и сохраняет повторяемость failure/recovery через BRANCH. Исправление проверяется автоматическим запуском, без build API.

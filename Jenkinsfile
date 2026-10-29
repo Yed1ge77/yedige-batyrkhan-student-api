@@ -20,7 +20,9 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                checkout([$class: 'GitSCM',
+                    branches: [[name: params.BRANCH]],
+                    userRemoteConfigs: [[url: 'https://github.com/Yed1ge77/yedige-batyrkhan-student-api.git']]])
                 echo 'Batyrkhan Yedige Yerlanuly | IT2-2302 | 38419 | IITU'
                 sh 'java -version && docker version --format "{{.Server.Version}}" && chmod +x gradlew'
             }

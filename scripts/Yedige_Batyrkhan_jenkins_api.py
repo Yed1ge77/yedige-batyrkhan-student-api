@@ -4,6 +4,8 @@ import argparse
 import base64
 import http.cookiejar
 import json
+import html
+import re
 import netrc
 import time
 import urllib.parse
@@ -47,9 +49,12 @@ def main():
         print(result.decode())
         return
     if args.action == 'poll-log':
-        result = call(JOB+'/scmPollLog/pollingLog')[0]
-        (evidence/'Yedige_Batyrkhan_jenkins-scm-polling.txt').write_bytes(result)
-        print(result.decode())
+        page = call(JOB+'/scmPollLog/')[0].decode()
+        match = re.search(r'<pre[^>]*>(.*?)</pre>', page, re.S)
+        if not match: raise SystemExit('Jenkins polling log was not found in the response')
+        result = html.unescape(re.sub(r'<[^>]+>', '', match.group(1)))
+        (evidence/'Yedige_Batyrkhan_jenkins-scm-polling.txt').write_text(result)
+        print(result)
         return
     number = args.number
     if args.action == 'build':
