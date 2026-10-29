@@ -1,16 +1,4 @@
-Project: /home/batyr/devops/yedige-batyrkhan-student-api
-Required paths:
-OK scripts
-OK logs
-OK backups
-OK src
-OK Dockerfile
-OK docker-compose.yml
-OK Jenkinsfile
-OK build.gradle
-OK README.md
-
-Tree (excluding .git, .tools, .secrets, .gradle, build and Python cache):
+Final project tree; hidden local tools/secrets and build caches excluded:
 .dockerignore
 .env.example
 .gitignore
@@ -26,21 +14,58 @@ build.gradle
 docker-compose.yml
 docs/
   architecture.md
+  ci-observation.md
   defense-ru.md
   demo-checklist.md
+  report.md
   screenshots.md
 evidence/
+  Yedige_Batyrkhan_access-blockers.txt
+  Yedige_Batyrkhan_api-curl.txt
   Yedige_Batyrkhan_assignment.txt
+  Yedige_Batyrkhan_ci-failure-fix-diff.txt
   Yedige_Batyrkhan_compose-safe-config.json
   Yedige_Batyrkhan_controlled-local-failure.txt
   Yedige_Batyrkhan_controlled-local-recovery.txt
+  Yedige_Batyrkhan_docker-final-state.txt
+  Yedige_Batyrkhan_docker-initial-access-denied.txt
+  Yedige_Batyrkhan_docker-persistence.txt
   Yedige_Batyrkhan_docker-verification.txt
   Yedige_Batyrkhan_environment.txt
+  Yedige_Batyrkhan_final-linux-checks.txt
   Yedige_Batyrkhan_git-conflict.txt
   Yedige_Batyrkhan_git-history.txt
+  Yedige_Batyrkhan_github-publication.txt
   Yedige_Batyrkhan_gradle-final-test.txt
   Yedige_Batyrkhan_gradle-missing-jdk.txt
   Yedige_Batyrkhan_gradle-test.txt
+  Yedige_Batyrkhan_initial-access-blockers.txt
+  Yedige_Batyrkhan_jenkins-auth-and-credential.json
+  Yedige_Batyrkhan_jenkins-build-1-console.txt
+  Yedige_Batyrkhan_jenkins-build-1-tests.json
+  Yedige_Batyrkhan_jenkins-build-1.json
+  Yedige_Batyrkhan_jenkins-build-2-console.txt
+  Yedige_Batyrkhan_jenkins-build-2-tests.json
+  Yedige_Batyrkhan_jenkins-build-2.json
+  Yedige_Batyrkhan_jenkins-build-3-console.txt
+  Yedige_Batyrkhan_jenkins-build-3-tests.json
+  Yedige_Batyrkhan_jenkins-build-3.json
+  Yedige_Batyrkhan_jenkins-build-4-console.txt
+  Yedige_Batyrkhan_jenkins-build-4-tests.json
+  Yedige_Batyrkhan_jenkins-build-4.json
+  Yedige_Batyrkhan_jenkins-build-5-console.txt
+  Yedige_Batyrkhan_jenkins-build-5-tests.json
+  Yedige_Batyrkhan_jenkins-build-5.json
+  Yedige_Batyrkhan_jenkins-build-6-console.txt
+  Yedige_Batyrkhan_jenkins-build-6-tests.json
+  Yedige_Batyrkhan_jenkins-build-6.json
+  Yedige_Batyrkhan_jenkins-final-verification.json
+  Yedige_Batyrkhan_jenkins-history.json
+  Yedige_Batyrkhan_jenkins-job-config.xml
+  Yedige_Batyrkhan_jenkins-plugins.json
+  Yedige_Batyrkhan_jenkins-scm-parameter-diagnostic.txt
+  Yedige_Batyrkhan_jenkins-scm-polling.txt
+  Yedige_Batyrkhan_jenkins-validation.txt
   Yedige_Batyrkhan_linux-checks.txt
   Yedige_Batyrkhan_linux-report-run.txt
   Yedige_Batyrkhan_local-api-curl.txt
@@ -49,11 +74,18 @@ evidence/
   Yedige_Batyrkhan_local-persistence.txt
   Yedige_Batyrkhan_local-start.txt
   Yedige_Batyrkhan_postgres-init.txt
+  Yedige_Batyrkhan_postgres-schema.txt
   Yedige_Batyrkhan_postgres-version.txt
+  Yedige_Batyrkhan_project-tree.txt
   Yedige_Batyrkhan_registry-digests.json
+  Yedige_Batyrkhan_safety-audit.txt
   Yedige_Batyrkhan_wrapper-generation.txt
   junit/
     TEST-kz.iitu.yedige.studentapi.StudentApiIntegrationTest.xml
+    TEST-kz.iitu.yedige.studentapi.StudentServiceTest.xml
+  junit-recovery/
+    TEST-kz.iitu.yedige.studentapi.StudentApiIntegrationTest.xml
+    TEST-kz.iitu.yedige.studentapi.StudentNormalizationTest.xml
     TEST-kz.iitu.yedige.studentapi.StudentServiceTest.xml
 gradle/
   wrapper/
@@ -65,6 +97,7 @@ gradlew.bat
 logs/
   Yedige_Batyrkhan_system_report.log
 scripts/
+  Yedige_Batyrkhan_audit.py
   Yedige_Batyrkhan_bootstrap_local.sh
   Yedige_Batyrkhan_configure_jenkins.py
   Yedige_Batyrkhan_init_env.sh

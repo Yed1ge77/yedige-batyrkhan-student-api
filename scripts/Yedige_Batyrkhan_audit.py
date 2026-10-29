@@ -2,6 +2,7 @@
 """Read-only audit of current project, evidence and exact secret leakage; never prints values."""
 from pathlib import Path
 import os
+import json
 import re
 import subprocess
 import urllib.parse
@@ -88,6 +89,13 @@ for directory, expected in [('evidence/junit',9),('evidence/junit-recovery',10)]
 transcript = Path('evidence/Yedige_Batyrkhan_local-final-api-curl.txt').read_text()
 assert len(re.findall(r'^\$ curl ',transcript,re.M)) == 15
 messages.append('PASS final HTTP transcript contains15 real curl requests')
-messages.append('STATUS: Docker audit passed and GitHub published; Jenkins builds/SCM automation still await Jenkins login')
+verification = json.loads(Path('evidence/Yedige_Batyrkhan_jenkins-final-verification.json').read_text())
+assert verification['temporaryResourcesCleaned'] and verification['failureStoppedLaterStages']
+assert [b['result'] for b in verification['builds']] == ['SUCCESS','FAILURE','SUCCESS','SUCCESS','SUCCESS','SUCCESS']
+assert any(c['_class'] == 'hudson.triggers.SCMTrigger$SCMTriggerCause' for c in verification['builds'][-1]['causes'])
+assert verification['automaticCommit'] in verification['builds'][-1]['revisions']
+messages.append('PASS Jenkins1SUCCESS/2FAILURE/3SUCCESS, baselines4/5SUCCESS, automatic6SUCCESS with SCM cause and exact SHA')
+messages.append('PASS CI failure propagation and temporary resource cleanup')
+messages.append('STATUS: all mandatory practical checks passed; release tag is finalized after this audit')
 report.write_text('\n'.join(messages)+'\n')
 print('\n'.join(messages))

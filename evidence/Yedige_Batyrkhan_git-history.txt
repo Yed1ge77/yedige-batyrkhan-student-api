@@ -1,4 +1,8 @@
-* 7047b12 (HEAD -> main, origin/main) Yedige Batyrkhan: verify Docker CRUD and volume persistence; publish GitHub project
+* 54f3a0e (HEAD -> main, origin/main) Yedige Batyrkhan: explain verified polling baseline and collect real SCM log
+* eb3553b Yedige Batyrkhan: fix SCM polling with main definition and explicit test branch checkout
+* f4ef0a2 Yedige Batyrkhan: document real CI failure recovery and fix Jenkins validator CLI
+* 2ee76da Yedige Batyrkhan: record published branch history after Docker verification
+* 7047b12 Yedige Batyrkhan: verify Docker CRUD and volume persistence; publish GitHub project
 * 5a7fd5a Yedige Batyrkhan: save final local history and safety verification evidence
 * fa3c09f Yedige Batyrkhan: record verified PostgreSQL API, full defense and honest requirement audit
 | * e1bfd8b (origin/test/yedige-batyrkhan-ci-recovery, test/yedige-batyrkhan-ci-recovery) Yedige Batyrkhan: fix expected normalized email and restore passing test
@@ -21,6 +25,7 @@
 | * 1cf95cc Yedige Batyrkhan: implement PostgreSQL Student CRUD with validated DTOs
 |/  
 * 12b2fdc Initial commit: Batyrkhan Yedige Student API
+
   feature/yedige-batyrkhan-crud
   feature/yedige-batyrkhan-documentation
   feature/yedige-batyrkhan-readme-review
@@ -33,5 +38,8 @@
   remotes/origin/main
   remotes/origin/test/yedige-batyrkhan-ci-failure-repro
   remotes/origin/test/yedige-batyrkhan-ci-recovery
+
 origin	https://github.com/Yed1ge77/yedige-batyrkhan-student-api.git (fetch)
 origin	https://github.com/Yed1ge77/yedige-batyrkhan-student-api.git (push)
+
+Release tag finalized after final audit commit; verify GitHub tag and git ls-remote --tags origin.

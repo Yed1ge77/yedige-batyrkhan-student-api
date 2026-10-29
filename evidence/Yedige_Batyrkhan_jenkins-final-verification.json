@@ -1,0 +1,131 @@
+{
+  "builds": [
+    {
+      "number": 1,
+      "result": "SUCCESS",
+      "tests": {
+        "_class": "hudson.tasks.junit.TestResult",
+        "failCount": 0,
+        "passCount": 9,
+        "skipCount": 0
+      },
+      "causes": [
+        {
+          "_class": "hudson.model.Cause$UserIdCause",
+          "shortDescription": "Started by user Batyrkhan Yedige Yerlanuly",
+          "userId": "batyr",
+          "userName": "Batyrkhan Yedige Yerlanuly"
+        }
+      ],
+      "revisions": [
+        "2ee76da1d2ef3468e40028a123e5e09ca784df2c"
+      ]
+    },
+    {
+      "number": 2,
+      "result": "FAILURE",
+      "tests": {
+        "_class": "hudson.tasks.junit.TestResult",
+        "failCount": 1,
+        "passCount": 9,
+        "skipCount": 0
+      },
+      "causes": [
+        {
+          "_class": "hudson.model.Cause$UserIdCause",
+          "shortDescription": "Started by user Batyrkhan Yedige Yerlanuly",
+          "userId": "batyr",
+          "userName": "Batyrkhan Yedige Yerlanuly"
+        }
+      ],
+      "revisions": [
+        "3d2517272cc36c7484a610a0e89eeb7a923202bf"
+      ]
+    },
+    {
+      "number": 3,
+      "result": "SUCCESS",
+      "tests": {
+        "_class": "hudson.tasks.junit.TestResult",
+        "failCount": 0,
+        "passCount": 10,
+        "skipCount": 0
+      },
+      "causes": [
+        {
+          "_class": "hudson.model.Cause$UserIdCause",
+          "shortDescription": "Started by user Batyrkhan Yedige Yerlanuly",
+          "userId": "batyr",
+          "userName": "Batyrkhan Yedige Yerlanuly"
+        }
+      ],
+      "revisions": [
+        "e1bfd8b55b7dc8c89d535329e1ce23388f9160c8"
+      ]
+    },
+    {
+      "number": 4,
+      "result": "SUCCESS",
+      "tests": {
+        "_class": "hudson.tasks.junit.TestResult",
+        "failCount": 0,
+        "passCount": 9,
+        "skipCount": 0
+      },
+      "causes": [
+        {
+          "_class": "hudson.model.Cause$UserIdCause",
+          "shortDescription": "Started by user Batyrkhan Yedige Yerlanuly",
+          "userId": "batyr",
+          "userName": "Batyrkhan Yedige Yerlanuly"
+        }
+      ],
+      "revisions": [
+        "2ee76da1d2ef3468e40028a123e5e09ca784df2c"
+      ]
+    },
+    {
+      "number": 5,
+      "result": "SUCCESS",
+      "tests": {
+        "_class": "hudson.tasks.junit.TestResult",
+        "failCount": 0,
+        "passCount": 9,
+        "skipCount": 0
+      },
+      "causes": [
+        {
+          "_class": "hudson.model.Cause$UserIdCause",
+          "shortDescription": "Started by user Batyrkhan Yedige Yerlanuly",
+          "userId": "batyr",
+          "userName": "Batyrkhan Yedige Yerlanuly"
+        }
+      ],
+      "revisions": [
+        "eb3553b6a86ac8d13b8ae58a4bb4fc32b19432e6"
+      ]
+    },
+    {
+      "number": 6,
+      "result": "SUCCESS",
+      "tests": {
+        "_class": "hudson.tasks.junit.TestResult",
+        "failCount": 0,
+        "passCount": 9,
+        "skipCount": 0
+      },
+      "causes": [
+        {
+          "_class": "hudson.triggers.SCMTrigger$SCMTriggerCause",
+          "shortDescription": "Started by an SCM change"
+        }
+      ],
+      "revisions": [
+        "54f3a0e7c6505930c51de5217a1dea39a4c60ec1"
+      ]
+    }
+  ],
+  "automaticCommit": "54f3a0e7c6505930c51de5217a1dea39a4c60ec1",
+  "temporaryResourcesCleaned": true,
+  "failureStoppedLaterStages": true
+}

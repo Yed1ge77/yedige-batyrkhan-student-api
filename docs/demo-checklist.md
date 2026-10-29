@@ -2,7 +2,7 @@
 
 Автор: Batyrkhan Yedige Yerlanuly, IT2-2302, 38419, IITU.
 
-Не выдавать запланированные действия за выполненные. Текущее состояние видно в REQUIREMENTS.md; Docker и GitHub проверены; Jenkins ещё требует авторизации. Для API использовать только один режим на порту 8081 одновременно.
+Не выдавать запланированные действия за выполненные. Текущее состояние видно в REQUIREMENTS.md; Docker, GitHub и Jenkins проверены. Реальная история:1SUCCESS,2FAILURE,3SUCCESS,4/5baselineSUCCESS,6автоматическийSUCCESS. Для API использовать только один режим на порту 8081 одновременно.
 
 1. Открыть терминал в проекте, `pwd`, показать структуру, ФИО README и полный источник требований в evidence/Yedige_Batyrkhan_assignment.txt.
 2. Из `/tmp` запустить абсолютный путь `scripts/Yedige_Batyrkhan_system_report.sh`. Показать log, `ls -l`, `stat`, mode 744. `tail -5` и `grep Yedige` с перенаправлением; объяснить `>` и `>>`. Показать `ps -ef`, `pgrep -a java`, backup и `cmp` финального README.

@@ -16,3 +16,5 @@ Polling диагностика: переменная ${BRANCH} в SCM definition
 Build #5: ручной baseline исправленного main, SUCCESS, 9 тестов. Для Pipeline job poller использовал SCM-снимки последнего выполненного Pipeline, поэтому одного изменения config.xml было недостаточно. После запуска исправленного Jenkinsfile сохранены конкретные SCM branches вместо ${BRANCH}. Следующий commit добавляет этот фактический разбор и исправленный сбор polling log через /scmPollLog/; опубликованный HTML не сохраняется, извлекается только текст лога.
 
 После push данного commit build API не вызывается; следующий запуск должен иметь SCMTriggerCause и SHA этого изменения. Ручные builds #4 и #5 не являются доказательством automation.
+
+Итог: build #6 автоматически стартовал от SCM change и завершился SUCCESS,9 tests passed. SHA 54f3a0e7c6505930c51de5217a1dea39a4c60ec1; cause SCMTriggerCause, UserIdCause отсутствует. Реальные JSON/Console/Polling evidence сохранены.

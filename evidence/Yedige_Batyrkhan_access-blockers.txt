@@ -1,11 +1,1 @@
-Checked 2026-10-30T02:24:31.173900+05:00
-Docker via new group: exit=0
-Server=29.9.1
-
-GitHub authenticated login: exit=0
-Yed1ge77
-
-Jenkins anonymous API: exit=0
-403
-Jenkins local login file exists: False
-Docker and GitHub available. Only Jenkins local authentication remains required.
+No remaining access blockers. GitHub Yed1ge77 authenticated; Docker via sg docker verified; Jenkins batyr authenticated. No credential values exported.

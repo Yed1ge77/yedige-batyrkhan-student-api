@@ -8,7 +8,7 @@ Documentation status: reproducible API demonstration, Russian oral defense and a
 
 CRUD change by Batyrkhan Yedige: transactional Student service, DTO validation, Flyway schema and REST controller; PostgreSQL tests cover create/read/update/delete and errors.
 
-Проверено: 9 тестов main с настоящим PostgreSQL, 15 curl-запросов native и 15 в Docker, сохранность PostgreSQL после пересоздания Docker-контейнеров без удаления volume, Linux и Git merge conflict. Docker образы реально собраны для версий 1.0.0 и 1.0.1, runtime UID/GID 10001. [GitHub repository](https://github.com/Yed1ge77/yedige-batyrkhan-student-api) создан, main и персональные ветки опубликованы. **Остаётся Jenkins: требуется локальная авторизация; builds и автоматический SCM trigger пока не подтверждены.** Подробности: [матрица требований](REQUIREMENTS.md), [фактический отчёт](docs/report.md).
+Проверено: 9 тестов main с настоящим PostgreSQL,15 curl-запросов native и15 в Docker, persistence после пересоздания контейнеров без удаления volume, Linux и настоящий Git merge conflict. Docker версии1.0.0→1.0.1, UID/GID10001. GitHub опубликован. **Jenkins: #1 SUCCESS → #2 ожидаемый FAILURE → #3 SUCCESS; #4/#5 baseline SUCCESS; #6 автоматически от SCM — SUCCESS.** Автоматический commit54f3a0e подтверждён SCMTriggerCause и точным SHA. Все обязательные требования закрыты; [полный отчёт](docs/report.md), [матрица](REQUIREMENTS.md). Release tag: [v1.0-yedige-batyrkhan](https://github.com/Yed1ge77/yedige-batyrkhan-student-api/tree/v1.0-yedige-batyrkhan).
 
 ## Запуск через Docker Compose
 
@@ -100,7 +100,7 @@ curl -i http://127.0.0.1:8081/api/students/999999999
 
 ## Jenkins и GitHub
 
-Имя job: `Yedige_Batyrkhan_Student_API`. Опубликованный репозиторий: `https://github.com/Yed1ge77/yedige-batyrkhan-student-api`. Jenkinsfile: Checkout → Build → Test → Docker Build → Verify, timeout 30 min, публикация JUnit, запрет параллельных запусков job. Build/Test выполняют Gradle Wrapper внутри закреплённого JDK Docker image, поэтому host javac не нужен. Агент должен иметь Docker CLI, доступ к daemon и общий с daemon путь workspace; `agent any` требует подходящий единственный агент либо ограничения job на подготовленный узел. Наличие такого агента ещё не проверено.
+Имя job: `Yedige_Batyrkhan_Student_API`. Опубликованный репозиторий: `https://github.com/Yed1ge77/yedige-batyrkhan-student-api`. Jenkinsfile: Checkout → Build → Test → Docker Build → Verify, timeout 30 min, публикация JUnit, запрет параллельных запусков job. Build/Test выполняют Gradle Wrapper внутри закреплённого JDK Docker image, поэтому host javac не нужен. Агент должен иметь Docker CLI, доступ к daemon и общий с daemon путь workspace; `agent any` требует подходящий единственный агент либо ограничения job на подготовленный узел. Built-In Node проверен реальными сборками: Java21, Docker29.9.1, доступ к daemon и общий путь workspace подтверждены.
 
 В локальном терминале после выдачи доступов:
 
@@ -121,11 +121,11 @@ python3 scripts/Yedige_Batyrkhan_jenkins_api.py build --branch main
 python3 scripts/Yedige_Batyrkhan_jenkins_api.py status
 ```
 
-Configure script создаёт только персональный job и Secret text `Yedige_Batyrkhan_CI_DB_PASSWORD`; существующий job/credential сохраняет. Требуются установленные Jenkins Pipeline, Git, Credentials Binding, Plain Credentials, JUnit и Timestamper plugins; доступ и состав plugins ещё не проверены. Public GitHub checkout не требует token. Секрет тестовой PostgreSQL создаётся случайно в Jenkins Credentials и передаётся через binding; временные контейнеры и сеть имеют уникальное имя по BUILD_NUMBER. Уборка не затрагивает Compose DB.
+Configure script создаёт только персональный job и Secret text `Yedige_Batyrkhan_CI_DB_PASSWORD`; существующий job/credential сохраняет. Требуются установленные Jenkins Pipeline, Git, Credentials Binding, Plain Credentials, JUnit и Timestamper plugins; доступ и состав plugins подтверждены, см. evidence/Yedige_Batyrkhan_jenkins-plugins.json. Public GitHub checkout не требует token. Секрет тестовой PostgreSQL создаётся случайно в Jenkins Credentials и передаётся через binding; временные контейнеры и сеть имеют уникальное имя по BUILD_NUMBER. Уборка не затрагивает Compose DB.
 
-Polling `* * * * *` регистрируется после первого запуска Jenkinsfile. Для доказательства automation нужен **новый содержательный commit после успешного baseline main**, push и ожидание без build API. Проверить build cause `hudson.triggers.SCMTrigger$SCMTriggerCause`, SHA и Console Output, сохранить polling log. В текущей работе такого доказательства ещё нет. Последовательность: [demo-checklist](docs/demo-checklist.md).
+Polling `* * * * *` регистрируется после первого запуска Jenkinsfile. Для доказательства automation нужен **новый содержательный commit после успешного baseline main**, push и ожидание без build API. Проверить build cause `hudson.triggers.SCMTrigger$SCMTriggerCause`, SHA и Console Output, сохранить polling log. Доказательство получено в build#6: SCMTriggerCause, Changes found и SHA54f3a0e; JSON, Console Output и polling log находятся в evidence/. Definition job закреплён на main, а параметр тестовой ветки применяется в Checkout; это исправило первоначальный No changes. Последовательность: [demo-checklist](docs/demo-checklist.md).
 
-Тег `v1.0-yedige-batyrkhan` создавать и push только после обязательных проверок Docker/Jenkins/SCM. Сейчас release tag намеренно отсутствует.
+Release tag `v1.0-yedige-batyrkhan` фиксирует итоговое состояние после Docker/Jenkins/SCM проверок. `git show v1.0-yedige-batyrkhan` и `git ls-remote --tags origin` показывают release. Для повторной демонстрации не перемещать этот tag.
 
 ## Linux, Git и материалы
 
