@@ -327,4 +327,3 @@ Test запускает автоматические unit и PostgreSQL integrat
 ## 80. Your Jenkins pipeline successfully compiles the application but fails during Docker image creation. How would you identify and fix the problem?
 
 Найти ошибку Docker Build: доступ к daemon и права агента, Dockerfile/context, сеть/registry, базовый образ, свободное место и путь JAR. Повторить docker build на том же агенте; менять только новый проект, не делать глобальный prune и не отключать Jenkins security.
-

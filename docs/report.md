@@ -4,7 +4,7 @@
 
 Папка: `/home/batyr/devops/yedige-batyrkhan-student-api`. Проверки выполнены 30 октября 2026, локальное время Asia/Qyzylorda (UTC+05). Главный источник — полный DOCX, включая таблицу; [извлечённый текст](../evidence/Yedige_Batyrkhan_assignment.txt). Все пункты: [REQUIREMENTS.md](../REQUIREMENTS.md).
 
-**Работа пока не завершена по обязательным пунктам.** Приложение реально работает native с PostgreSQL; Docker build/runtime, публикация GitHub и Jenkins execution заблокированы доступами. Никаких номеров Jenkins builds, Docker image sizes или доказательств auto trigger не выдумано.
+**Остаётся обязательная Jenkins-часть: необходима локальная авторизация.** Docker build/runtime и GitHub publication теперь реально выполнены. Native-экземпляр штатно остановлен с сохранением данных, порт8081 передан контейнерному приложению. Jenkins builds и auto trigger пока не выполнялись.
 
 ## Проверенное окружение
 
@@ -19,12 +19,12 @@
 | Gradle | Wrapper 8.14.6; distribution SHA-256 закреплён |
 | Spring Boot | 3.5.16; dependency-management plugin1.1.7 |
 | Native PostgreSQL | 16.15 (Ubuntu16.15-0ubuntu0.24.04.1) |
-| Docker CLI | 29.9.1; daemon недоступен batyr из-за прав socket |
+| Docker CLI | 29.9.1; daemon доступен через sg docker, новая группа batyr подтверждена |
 | Compose | v5.6.0 |
 | Jenkins | 2.580.1, systemd active, 127.0.0.1:8080; anonymous API403 |
-| GitHub CLI | 2.103.3 в .tools; не авторизован |
+| GitHub CLI | 2.103.3 в .tools; авторизован Yed1ge77 |
 
-Версии совместимы: [Spring Boot 3.5 system requirements](https://docs.spring.io/spring-boot/3.5/system-requirements.html) допускает Java21 и Gradle8.x; [официальные Gradle releases](https://gradle.org/releases/) содержат 8.14.6. Boot artifact3.5.16 проверен через Maven Central и успешно собран. Docker base images закреплены реальными registry digests, см. [registry API evidence](../evidence/Yedige_Batyrkhan_registry-digests.json). Это подтверждает существование manifests, но не сборку/запуск образа.
+Версии совместимы: [Spring Boot 3.5 system requirements](https://docs.spring.io/spring-boot/3.5/system-requirements.html) допускает Java21 и Gradle8.x; [официальные Gradle releases](https://gradle.org/releases/) содержат 8.14.6. Boot artifact3.5.16 проверен через Maven Central и успешно собран. Docker base images закреплены реальными registry digests, см. [registry API evidence](../evidence/Yedige_Batyrkhan_registry-digests.json). Образы затем реально собраны и запущены; результат приведён ниже.
 
 Подробная диагностика: [environment](../evidence/Yedige_Batyrkhan_environment.txt), [access blockers](../evidence/Yedige_Batyrkhan_access-blockers.txt).
 
@@ -61,13 +61,25 @@ Identity подтверждена через GitHub commit history старой 
 
 [Реальная история и ветки](../evidence/Yedige_Batyrkhan_git-history.txt), [вывод конфликта и маркеры](../evidence/Yedige_Batyrkhan_git-conflict.txt). Источник истины — Git objects и `git log`, текст отчёта лишь поясняет их.
 
-GitHub target: `https://github.com/Yed1ge77/yedige-batyrkhan-student-api`. **Repository ещё не создан, origin не настроен, push не выполнен.** Release tag отсутствует: по инструкции он создаётся после итоговых обязательных проверок.
+GitHub: [Yed1ge77/yedige-batyrkhan-student-api](https://github.com/Yed1ge77/yedige-batyrkhan-student-api), public repository создан. Origin настроен; main, три feature-ветки и две test-ветки отправлены. [API и remote refs](../evidence/Yedige_Batyrkhan_github-publication.txt). Release tag ещё отсутствует: создаётся после Jenkins и SCM проверки.
 
 ## Docker
 
 Написаны multi-stage Dockerfile JDK→JRE, UID10001, .dockerignore, Compose app/db, env, отдельная сеть, named volume, pg_isready, персональный project. `docker compose config --quiet` проходит; [безопасная выборка конфигурации](../evidence/Yedige_Batyrkhan_compose-safe-config.json) не содержит DB_PASSWORD. Настоящий .env имеет mode600 и исключён из Git/context.
 
-Полный [контейнерный аудит](../scripts/Yedige_Batyrkhan_verify_docker.sh) написан и запущен, но остановился на `permission denied` Docker socket: [вывод](../evidence/Yedige_Batyrkhan_docker-verification.txt). **Образ не собран; его размер/created не измерены; контейнеры не созданы; runtime UID, Docker CRUD, версия rebuild и named-volume persistence ещё не подтверждены.** Native persistence отдельно подтверждён и не засчитывается за Docker volume.
+Полный [контейнерный аудит](../scripts/Yedige_Batyrkhan_verify_docker.sh) **успешно выполнен через sg docker**: [сырой вывод сборок и всех операций](../evidence/Yedige_Batyrkhan_docker-verification.txt). Первоначальный отказ доступа сохранён отдельно, не выдаётся за текущий результат.
+
+| Проверка | Реальный результат |
+|---|---|
+| Первая сборка | Версия1.0.0, image1dc83756b87a, размер515970635 bytes, created2026-10-30T02:21:13+05 |
+| Пересборка версии | Версия1.0.1, image3e9e2b0a10da, размер515966486 bytes, created2026-10-30T02:22:38+05 |
+| Runtime | UID/GID10001:10001; Java21; app работает на8080, опубликован127.0.0.1:8081 |
+| Compose | app работает, PostgreSQL16.15 healthy, отдельная сеть и named volume |
+| Управление | ps, app/db logs, безопасный inspect, exec id/java/pwd, stop/start app выполнены |
+| API | 15/15 curl проверок в контейнерном приложении, [HTTP evidence](../evidence/Yedige_Batyrkhan_api-curl.txt) |
+| Persistence | Запись id3 полностью совпала после compose down/up без -v, [доказательство](../evidence/Yedige_Batyrkhan_docker-persistence.txt) |
+
+Создан основной Docker tag v1.0-yedige-batyrkhan и дополнительный alias v1.0-yedige-batyrkhan-38419. Пароли не печатались; inspect выбирал только несекретные поля. Native data сохранены в .tools/pgdata и не смешивались с Docker volume.
 
 ## Jenkins и контролируемый сбой
 
@@ -87,23 +99,21 @@ GitHub target: `https://github.com/Yed1ge77/yedige-batyrkhan-student-api`. **Rep
 
 ## Внешние блокеры и локальные действия владельца
 
-Сначала в вашем терминале:
+Docker/GitHub блокеры устранены. Осталось выполнить в вашем локальном терминале:
 
 ```bash
-sudo usermod -aG docker batyr
 cd ~/devops/yedige-batyrkhan-student-api
-.tools/gh auth login --hostname github.com --git-protocol https
 bash scripts/Yedige_Batyrkhan_jenkins_login.sh
 ```
 
-После изменения группы нужен новый login shell, либо выполнение Docker-команд через `sg docker -c 'команда'`. Текущий процесс автоматически новую группу не получает. Jenkins user уже указан в docker group, но daemon access от Jenkins agent и возможности agent нужно проверить после login; старую защиту и job не менять. Пароль sudo/GitHub/Jenkins вводится только локально; присылать его в чат не нужно.
+Скрипт принимает Jenkins username и скрыто пароль/API token, сохраняет .secrets/jenkins.netrc с mode600 и проверяет whoAmI. Ожидается authenticated:true. Секреты в чат не отправлять. Затем можно создать только персональный job/credential, проверить agent и выполнить SUCCESS → FAILURE → SUCCESS и polling. Текущий процесс использует sg docker, поскольку его первоначальный список групп не обновился.
 
 Полный перечень команд после доступа — README. После реальных Docker/Jenkins/SCM результатов необходимо обновить этот отчёт и матрицу, затем создать и push release tag.
 
 ## Что осталось запущено
 
-На момент аудита: native Student API1.0.1 на127.0.0.1:8081, отдельный native PostgreSQL16.15 на127.0.0.1:55432. Существующий Jenkins на127.0.0.1:8080 и системный Docker daemon работали ранее и оставлены без изменения. Новые Docker containers/networks/volumes не создавались из-за отказа доступа.
+На момент аудита работают **два новых Compose-контейнера**: app1.0.1 на127.0.0.1:8081 и PostgreSQL16.15 с persistent named volume. Native app и native PostgreSQL штатно остановлены; данные .tools/pgdata сохранены. Существующий Jenkins на8080 и прежняя лабораторная не изменялись.
 
-Остановить только новые native сервисы: `bash scripts/Yedige_Batyrkhan_local.sh stop`. После доступа контейнерный запуск: `docker compose up -d --build --wait --wait-timeout 120`, проверка: `python3 scripts/Yedige_Batyrkhan_verify_api.py`, остановка: `docker compose stop` или `down` без `-v`.
+Запуск: `sg docker -c 'docker compose up -d --build --wait --wait-timeout 120'`. Проверка: `python3 scripts/Yedige_Batyrkhan_verify_api.py`. Остановка: `sg docker -c 'docker compose stop'` либо `down` без -v. В новом login shell с группой docker префикс sg не нужен.
 
 Отчёт подготовлен в Markdown. Надёжный PDF renderer в окружении не найден; PDF не создавался. [Список реальных screenshots](screenshots.md) подготовлен, имитации не создавались. [Русская защита со всеми80 ответами](defense-ru.md), [архитектура](architecture.md).

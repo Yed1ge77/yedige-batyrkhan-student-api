@@ -158,3 +158,8 @@
 2026-10-30T01:58:28.847+05:00  WARN 6685 --- [yedige-batyrkhan-student-api] [nio-8081-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23505
 2026-10-30T01:58:28.848+05:00 ERROR 6685 --- [yedige-batyrkhan-student-api] [nio-8081-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: duplicate key value violates unique constraint "uk_students_email"
   Detail: Key (email)=(yedige.38419.14404aac@example.com) already exists.
+2026-10-30T02:18:05.412+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-30T02:18:05.458+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-10-30T02:18:05.520+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-30T02:18:05.569+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-30T02:18:05.598+05:00  INFO 6685 --- [yedige-batyrkhan-student-api] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -77,7 +77,14 @@ PY
     done
     echo 'Application readiness timeout; see evidence/Yedige_Batyrkhan_local-app.log' >&2; exit 1
     ;;
-  stop) stop_app; "$pgbin/pg_ctl" -D .tools/pgdata -m fast stop ;;
+  stop)
+    stop_app
+    if "$pgbin/pg_ctl" -D .tools/pgdata status >/dev/null 2>&1; then
+      "$pgbin/pg_ctl" -D .tools/pgdata -m fast stop
+    else
+      echo 'Native PostgreSQL already stopped; data preserved'
+    fi
+    ;;
   app-stop) stop_app ;;
   *) echo 'Usage: local.sh db-start|test|start|app-stop|stop'; exit 2 ;;
 esac

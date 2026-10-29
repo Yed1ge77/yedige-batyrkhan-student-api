@@ -1,0 +1,15 @@
+Checked: 2026-10-30T02:01:05.404762+05:00
+noninteractive sudo: exit=1
+sudo: a password is required
+
+Docker daemon access: exit=1
+
+permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+
+GitHub auth: exit=1
+You are not logged into any GitHub hosts. To log in, run: gh auth login
+
+Jenkins anonymous API: exit=0
+403
+
+Jenkins local login file exists: False

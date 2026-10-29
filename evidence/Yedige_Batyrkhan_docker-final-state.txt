@@ -1,0 +1,5 @@
+NAME                                 IMAGE                                                                                             COMMAND                  SERVICE   CREATED              STATUS                        PORTS
+yedige-batyrkhan-student-api-app-1   yedige-batyrkhan-student-api:v1.0-yedige-batyrkhan                                                "java -jar /app/stud…"   app       About a minute ago   Up About a minute             127.0.0.1:8081->8080/tcp
+yedige-batyrkhan-student-api-db-1    postgres:16.15-bookworm@sha256:e8a07d2c7579b038938cdba6c539e580e5001caf9ea203d397b5cc83e76bd938   "docker-entrypoint.s…"   db        About a minute ago   Up About a minute (healthy)   5432/tcp
+{"status":"UP"}
+{"group":"IT2-2302","version":"1.0.1","student":"Batyrkhan Yedige Yerlanuly","university":"IITU","studentId":"38419"}

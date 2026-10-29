@@ -8,11 +8,11 @@ Documentation status: reproducible API demonstration, Russian oral defense and a
 
 CRUD change by Batyrkhan Yedige: transactional Student service, DTO validation, Flyway schema and REST controller; PostgreSQL tests cover create/read/update/delete and errors.
 
-Проверено локально: 9 тестов main с настоящим PostgreSQL, 15 curl-запросов, сохранность записи после перезапуска приложения и PostgreSQL, Linux и Git merge conflict. **Docker runtime, GitHub push и Jenkins пока заблокированы доступами. Полностью завершённой работа не объявляется.** Подробности: [матрица требований](REQUIREMENTS.md), [фактический отчёт](docs/report.md).
+Проверено: 9 тестов main с настоящим PostgreSQL, 15 curl-запросов native и 15 в Docker, сохранность PostgreSQL после пересоздания Docker-контейнеров без удаления volume, Linux и Git merge conflict. Docker образы реально собраны для версий 1.0.0 и 1.0.1, runtime UID/GID 10001. [GitHub repository](https://github.com/Yed1ge77/yedige-batyrkhan-student-api) создан, main и персональные ветки опубликованы. **Остаётся Jenkins: требуется локальная авторизация; builds и автоматический SCM trigger пока не подтверждены.** Подробности: [матрица требований](REQUIREMENTS.md), [фактический отчёт](docs/report.md).
 
 ## Запуск через Docker Compose
 
-Нужны Docker Engine + Compose и доступ пользователя к daemon. Порт 8080 занят существующим Jenkins; API публикуется только на `127.0.0.1:8081`. PostgreSQL не публикует порт на хосте.
+Нужны Docker Engine + Compose и доступ пользователя к daemon. Если текущий shell ещё не видит новую группу docker, выполнять команды через `sg docker -c 'docker compose ...'` либо открыть новый login shell. Порт 8080 занят существующим Jenkins; API публикуется только на `127.0.0.1:8081`. PostgreSQL не публикует порт на хосте.
 
 ```bash
 cd ~/devops/yedige-batyrkhan-student-api
@@ -40,7 +40,7 @@ docker compose up -d --wait --wait-timeout 120
 
 `down -v` удаляет данные и для демонстрации сохранности не применяется. Не выполнять глобальный Docker prune.
 
-Полный контейнерный аудит (ещё не пройден; занимает 8081, сначала остановить native-демонстрацию):
+Полный контейнерный аудит успешно пройден; повторный запуск занимает 8081, сначала остановить native-демонстрацию:
 
 ```bash
 bash scripts/Yedige_Batyrkhan_local.sh stop
@@ -100,16 +100,14 @@ curl -i http://127.0.0.1:8081/api/students/999999999
 
 ## Jenkins и GitHub
 
-Имя job: `Yedige_Batyrkhan_Student_API`. Репозиторий по плану: `https://github.com/Yed1ge77/yedige-batyrkhan-student-api` — ещё не создан. Jenkinsfile: Checkout → Build → Test → Docker Build → Verify, timeout 30 min, публикация JUnit, запрет параллельных запусков job. Build/Test выполняют Gradle Wrapper внутри закреплённого JDK Docker image, поэтому host javac не нужен. Агент должен иметь Docker CLI, доступ к daemon и общий с daemon путь workspace; `agent any` требует подходящий единственный агент либо ограничения job на подготовленный узел. Наличие такого агента ещё не проверено.
+Имя job: `Yedige_Batyrkhan_Student_API`. Опубликованный репозиторий: `https://github.com/Yed1ge77/yedige-batyrkhan-student-api`. Jenkinsfile: Checkout → Build → Test → Docker Build → Verify, timeout 30 min, публикация JUnit, запрет параллельных запусков job. Build/Test выполняют Gradle Wrapper внутри закреплённого JDK Docker image, поэтому host javac не нужен. Агент должен иметь Docker CLI, доступ к daemon и общий с daemon путь workspace; `agent any` требует подходящий единственный агент либо ограничения job на подготовленный узел. Наличие такого агента ещё не проверено.
 
 В локальном терминале после выдачи доступов:
 
 ```bash
 .tools/gh auth login --hostname github.com --git-protocol https
 bash scripts/Yedige_Batyrkhan_jenkins_login.sh
-# После авторизации создать НОВЫЙ public repository, не старую лабораторную:
-.tools/gh repo create Yed1ge77/yedige-batyrkhan-student-api --public --source=. --remote=origin
-.tools/gh auth setup-git
+# Новый public repository уже создан; старую лабораторную не изменять.
 # Push только явно перечисленных веток:
 git push -u origin main feature/yedige-batyrkhan-crud feature/yedige-batyrkhan-documentation feature/yedige-batyrkhan-readme-review test/yedige-batyrkhan-ci-failure-repro test/yedige-batyrkhan-ci-recovery
 python3 scripts/Yedige_Batyrkhan_configure_jenkins.py

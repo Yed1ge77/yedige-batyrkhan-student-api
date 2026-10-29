@@ -85,6 +85,6 @@ for directory, expected in [('evidence/junit',9),('evidence/junit-recovery',10)]
 transcript = Path('evidence/Yedige_Batyrkhan_local-final-api-curl.txt').read_text()
 assert len(re.findall(r'^\$ curl ',transcript,re.M)) == 15
 messages.append('PASS final HTTP transcript contains15 real curl requests')
-messages.append('LIMIT: Docker execution, remote publication, Jenkins builds and SCM automation remain blocked; not reported as passed')
+messages.append('STATUS: Docker audit passed and GitHub published; Jenkins builds/SCM automation still await Jenkins login')
 report.write_text('\n'.join(messages)+'\n')
 print('\n'.join(messages))

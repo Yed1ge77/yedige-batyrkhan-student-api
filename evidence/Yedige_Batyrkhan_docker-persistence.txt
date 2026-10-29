@@ -1,0 +1,3 @@
+Before restart: {"id":3,"firstName":"Batyrkhan","lastName":"Yedige","email":"persist.38419.2bb8de5a@example.com","groupName":"IT2-2302"}
+After container recreation: {"id":3,"firstName":"Batyrkhan","lastName":"Yedige","email":"persist.38419.2bb8de5a@example.com","groupName":"IT2-2302"}
+PASS: identical record from persistent named volume

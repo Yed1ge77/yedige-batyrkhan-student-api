@@ -1,15 +1,11 @@
-Checked: 2026-10-30T02:01:05.404762+05:00
-noninteractive sudo: exit=1
-sudo: a password is required
+Checked 2026-10-30T02:24:31.173900+05:00
+Docker via new group: exit=0
+Server=29.9.1
 
-Docker daemon access: exit=1
-
-permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
-
-GitHub auth: exit=1
-You are not logged into any GitHub hosts. To log in, run: gh auth login
+GitHub authenticated login: exit=0
+Yed1ge77
 
 Jenkins anonymous API: exit=0
 403
-
 Jenkins local login file exists: False
+Docker and GitHub available. Only Jenkins local authentication remains required.

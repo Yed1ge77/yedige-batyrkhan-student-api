@@ -1,0 +1,9 @@
+{"defaultBranchRef":{"name":"main"},"name":"yedige-batyrkhan-student-api","owner":{"id":"U_kgDODGvyuQ","login":"Yed1ge77"},"url":"https://github.com/Yed1ge77/yedige-batyrkhan-student-api","visibility":"PUBLIC"}
+origin	https://github.com/Yed1ge77/yedige-batyrkhan-student-api.git (fetch)
+origin	https://github.com/Yed1ge77/yedige-batyrkhan-student-api.git (push)
+63b3d98b5b5d58ead27f7afd259c08a59649f78f	refs/heads/feature/yedige-batyrkhan-crud
+4bfbe0ec3d6cbc3cfabaad4da242ed4035102082	refs/heads/feature/yedige-batyrkhan-documentation
+069694b64ddcfe17641234a8660c2b4dbd29ec8e	refs/heads/feature/yedige-batyrkhan-readme-review
+5a7fd5a3164698308fe5d8b6b4f66f1f822d482f	refs/heads/main
+3d2517272cc36c7484a610a0e89eeb7a923202bf	refs/heads/test/yedige-batyrkhan-ci-failure-repro
+e1bfd8b55b7dc8c89d535329e1ce23388f9160c8	refs/heads/test/yedige-batyrkhan-ci-recovery
