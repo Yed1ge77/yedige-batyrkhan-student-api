@@ -12,3 +12,7 @@
 Этот содержательный commit добавляет фактические наблюдения, evidence и исправление CLI. После его push следующая проверка выполняется только SCM polling; ручной build API не вызывается. У автоматического build нужно проверить SCMTriggerCause и точный SHA этого commit. Результат эксперимента фиксируется отдельно после завершения.
 
 Polling диагностика: переменная ${BRANCH} в SCM definition возвращала No changes при новом remote main. Job definition закреплён на main; тестовая ветка выбирается явно параметром в Checkout Jenkinsfile. Это делает SCM polling однозначным и сохраняет повторяемость failure/recovery через BRANCH. Исправление проверяется автоматическим запуском, без build API.
+
+Build #5: ручной baseline исправленного main, SUCCESS, 9 тестов. Для Pipeline job poller использовал SCM-снимки последнего выполненного Pipeline, поэтому одного изменения config.xml было недостаточно. После запуска исправленного Jenkinsfile сохранены конкретные SCM branches вместо ${BRANCH}. Следующий commit добавляет этот фактический разбор и исправленный сбор polling log через /scmPollLog/; опубликованный HTML не сохраняется, извлекается только текст лога.
+
+После push данного commit build API не вызывается; следующий запуск должен иметь SCMTriggerCause и SHA этого изменения. Ручные builds #4 и #5 не являются доказательством automation.
