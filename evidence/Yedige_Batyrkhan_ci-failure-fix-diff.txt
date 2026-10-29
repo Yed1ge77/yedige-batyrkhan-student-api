@@ -1,0 +1,16 @@
+e1bfd8b Yedige Batyrkhan: fix expected normalized email and restore passing test
+3d25172 Yedige Batyrkhan: demonstrate controlled CI failure with wrong email expectation
+diff --git a/src/test/java/kz/iitu/yedige/studentapi/StudentNormalizationTest.java b/src/test/java/kz/iitu/yedige/studentapi/StudentNormalizationTest.java
+index 5bcfddb..1f31bdb 100644
+--- a/src/test/java/kz/iitu/yedige/studentapi/StudentNormalizationTest.java
++++ b/src/test/java/kz/iitu/yedige/studentapi/StudentNormalizationTest.java
+@@ -7,7 +7,7 @@ class StudentNormalizationTest {
+     @Test void normalizesPersonalEmail() {
+         var student = new Student(new StudentRequest("Batyrkhan", "Yedige",
+             "  Batyrkhan.Yedige@EXAMPLE.COM  ", "IT2-2302"));
+-        // Controlled failure on an isolated branch, never merged to main.
+-        assertEquals("WRONG-EXPECTED-EMAIL", student.getEmail());
++        // Correct contract: email is trimmed and normalized to lower case.
++        assertEquals("batyrkhan.yedige@example.com", student.getEmail());
+     }
+ }

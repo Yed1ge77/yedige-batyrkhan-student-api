@@ -1,0 +1,167 @@
+Started by user Batyrkhan Yedige Yerlanuly
+Checking out git https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git into /var/lib/jenkins/workspace/Yedige_Batyrkhan_Student_API@script/39cba862431c134a792e757602207f21bf5b2ef1b86a8bc004bc14ce0521c563 to read Jenkinsfile
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Yedige_Batyrkhan_Student_API@script/39cba862431c134a792e757602207f21bf5b2ef1b86a8bc004bc14ce0521c563/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git # timeout=10
+Fetching upstream changes from https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+ > git fetch --tags --force --progress -- https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/test/yedige-***REDACTED***khan-ci-failure-repro^{commit} # timeout=10
+ > git rev-parse test/yedige-***REDACTED***khan-ci-failure-repro^{commit} # timeout=10
+Checking out Revision 3d2517272cc36c7484a610a0e89eeb7a923202bf (refs/remotes/origin/test/yedige-***REDACTED***khan-ci-failure-repro)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 3d2517272cc36c7484a610a0e89eeb7a923202bf # timeout=10
+Commit message: "Yedige Batyrkhan: demonstrate controlled CI failure with wrong email expectation"
+First time build. Skipping changelog.
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/Yedige_Batyrkhan_Student_API
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timeout
+Timeout set to expire in 30 min
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] checkout
+[2026-10-29T21:50:54.210Z] The recommended git tool is: NONE
+[2026-10-29T21:50:54.210Z] No credentials specified
+[2026-10-29T21:50:54.216Z]  > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Yedige_Batyrkhan_Student_API/.git # timeout=10
+[2026-10-29T21:50:54.235Z] Fetching changes from the remote Git repository
+[2026-10-29T21:50:54.237Z]  > git config remote.origin.url https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git # timeout=10
+[2026-10-29T21:50:54.257Z] Fetching upstream changes from https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git
+[2026-10-29T21:50:54.258Z]  > git --version # timeout=10
+[2026-10-29T21:50:54.268Z]  > git --version # 'git version 2.43.0'
+[2026-10-29T21:50:54.268Z]  > git fetch --tags --force --progress -- https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-10-29T21:50:55.073Z]  > git rev-parse refs/remotes/origin/test/yedige-***REDACTED***khan-ci-failure-repro^{commit} # timeout=10
+[2026-10-29T21:50:55.078Z]  > git rev-parse test/yedige-***REDACTED***khan-ci-failure-repro^{commit} # timeout=10
+[2026-10-29T21:50:55.083Z] Checking out Revision 3d2517272cc36c7484a610a0e89eeb7a923202bf (refs/remotes/origin/test/yedige-***REDACTED***khan-ci-failure-repro)
+[2026-10-29T21:50:55.083Z]  > git config core.sparsecheckout # timeout=10
+[2026-10-29T21:50:55.088Z]  > git checkout -f 3d2517272cc36c7484a610a0e89eeb7a923202bf # timeout=10
+[2026-10-29T21:50:55.108Z] Commit message: "Yedige Batyrkhan: demonstrate controlled CI failure with wrong email expectation"
+[Pipeline] echo
+[2026-10-29T21:50:55.141Z] Batyrkhan Yedige Yerlanuly | IT2-2302 | 38419 | IITU
+[Pipeline] sh
+[2026-10-29T21:50:55.416Z] + java -version
+[2026-10-29T21:50:55.417Z] openjdk version "21.0.12.1" 2026-08-18
+[2026-10-29T21:50:55.417Z] OpenJDK Runtime Environment (build 21.0.12.1+1-1-24.04.4-Ubuntu)
+[2026-10-29T21:50:55.417Z] OpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-24.04.4-Ubuntu, mixed mode, sharing)
+[2026-10-29T21:50:55.417Z] + docker version --format {{.Server.Version}}
+[2026-10-29T21:50:55.417Z] 29.9.1
+[2026-10-29T21:50:55.417Z] + chmod +x gradlew
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] sh
+[2026-10-29T21:50:55.813Z] + id -u
+[2026-10-29T21:50:55.814Z] + id -g
+[2026-10-29T21:50:55.814Z] + docker run --rm --name yedige-***REDACTED***khan-ci-2-build -u 105:108 -v /var/lib/jenkins/workspace/Yedige_Batyrkhan_Student_API:/workspace -w /workspace -e GRADLE_USER_HOME=/workspace/.gradle-ci eclipse-temurin:21-jdk-jammy ./gradlew --no-daemon clean assemble
+[2026-10-29T21:50:55.814Z] Unable to find image 'eclipse-temurin:21-jdk-jammy' locally
+[2026-10-29T21:50:57.165Z] 21-jdk-jammy: Pulling from library/eclipse-temurin
+[2026-10-29T21:50:57.416Z] Digest: sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69
+[2026-10-29T21:50:57.416Z] Status: Downloaded newer image for eclipse-temurin:21-jdk-jammy
+[2026-10-29T21:50:58.768Z] To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.6/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+[2026-10-29T21:51:00.633Z] Daemon will be stopped at the end of the build 
+[2026-10-29T21:51:10.532Z] > Task :clean
+[2026-10-29T21:51:10.532Z] > Task :bootBuildInfo
+[2026-10-29T21:51:12.404Z] > Task :compileJava
+[2026-10-29T21:51:12.404Z] > Task :processResources
+[2026-10-29T21:51:12.404Z] > Task :classes
+[2026-10-29T21:51:12.404Z] > Task :resolveMainClassName
+[2026-10-29T21:51:13.756Z] > Task :bootJar
+[2026-10-29T21:51:13.756Z] > Task :jar SKIPPED
+[2026-10-29T21:51:13.756Z] > Task :assemble
+[2026-10-29T21:51:13.756Z] 
+[2026-10-29T21:51:13.756Z] BUILD SUCCESSFUL in 15s
+[2026-10-29T21:51:13.756Z] 6 actionable tasks: 6 executed
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] withCredentials
+[2026-10-29T21:51:14.194Z] Masking supported pattern matches of $DB_PASSWORD
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T21:51:14.501Z] Unable to find image 'postgres:16.15-bookworm' locally
+[2026-10-29T21:51:16.366Z] 16.15-bookworm: Pulling from library/postgres
+[2026-10-29T21:51:16.366Z] Digest: sha256:e8a07d2c7579b038938cdba6c539e580e5001caf9ea203d397b5cc83e76bd938
+[2026-10-29T21:51:16.366Z] Status: Downloaded newer image for postgres:16.15-bookworm
+[2026-10-29T21:51:16.582Z] /var/run/postgresql:5432 - accepting connections
+[2026-10-29T21:51:17.494Z] To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.6/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+[2026-10-29T21:51:19.364Z] Daemon will be stopped at the end of the build 
+[2026-10-29T21:51:31.468Z] > Task :bootBuildInfo
+[2026-10-29T21:51:31.468Z] > Task :compileJava UP-TO-DATE
+[2026-10-29T21:51:31.470Z] > Task :processResources UP-TO-DATE
+[2026-10-29T21:51:31.470Z] > Task :classes
+[2026-10-29T21:51:33.965Z] > Task :compileTestJava
+[2026-10-29T21:51:34.216Z] > Task :processTestResources NO-SOURCE
+[2026-10-29T21:51:34.216Z] > Task :testClasses
+[2026-10-29T21:51:47.351Z] OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[2026-10-29T21:51:47.603Z] 
+[2026-10-29T21:51:47.604Z] > Task :test
+[2026-10-29T21:51:47.604Z] 
+[2026-10-29T21:51:47.604Z] StudentNormalizationTest > normalizesPersonalEmail() FAILED
+[2026-10-29T21:51:47.604Z]     org.opentest4j.AssertionFailedError at StudentNormalizationTest.java:11
+[2026-10-29T21:51:48.156Z] 
+[2026-10-29T21:51:48.156Z] 2026-10-29T21:51:47.884Z  INFO 123 --- [yedige-***REDACTED***khan-student-api] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-10-29T21:51:48.156Z] 2026-10-29T21:51:47.893Z  INFO 123 --- [yedige-***REDACTED***khan-student-api] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+[2026-10-29T21:51:48.156Z] 2026-10-29T21:51:47.923Z  INFO 123 --- [yedige-***REDACTED***khan-student-api] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[2026-10-29T21:51:48.156Z] 
+[2026-10-29T21:51:48.157Z] > Task :test
+[2026-10-29T21:51:48.157Z] 10 tests completed, 1 failed FAILED
+[2026-10-29T21:51:48.157Z] 
+[2026-10-29T21:51:48.157Z] 
+[2026-10-29T21:51:48.157Z] FAILURE: Build failed with an exception.
+[2026-10-29T21:51:48.157Z] 
+[2026-10-29T21:51:48.157Z] * What went wrong:
+[2026-10-29T21:51:48.157Z] Execution failed for task ':test'.
+[2026-10-29T21:51:48.157Z] > There were failing tests. See the report at: file:///workspace/build/reports/tests/test/index.html
+[2026-10-29T21:51:48.157Z] 
+[2026-10-29T21:51:48.157Z] * Try:
+[2026-10-29T21:51:48.157Z] > Run with --scan to get full insights.
+[2026-10-29T21:51:48.157Z] 
+[2026-10-29T21:51:48.157Z] BUILD FAILED in 33s
+[2026-10-29T21:51:48.157Z] 5 actionable tasks: 3 executed, 2 up-to-date
+[Pipeline] }
+[Pipeline] // withCredentials
+Post stage
+[Pipeline] junit
+[2026-10-29T21:51:49.203Z] Recording test results
+[2026-10-29T21:51:49.260Z] [Checks API] No suitable checks publisher found.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Docker Build)
+Stage "Docker Build" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Verify)
+Stage "Verify" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] sh
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // timeout
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE

@@ -35,7 +35,7 @@ def main():
     evidence.mkdir(exist_ok=True)
     if args.action == 'validate':
         boundary = 'YedigeBatyrkhanPipelineBoundary38419'
-        body = ('--'+boundary+'\r\nContent-Disposition: form-data; name="jenkinsfile"; filename="Jenkinsfile"\r\nContent-Type: text/plain\r\n\r\n').encode() + (ROOT/'Jenkinsfile').read_bytes() + ('\r\n--'+boundary+'--\r\n').encode()
+        body = ('--'+boundary+'\r\nContent-Disposition: form-data; name="jenkinsfile"\r\nContent-Type: text/plain\r\n\r\n').encode() + (ROOT/'Jenkinsfile').read_bytes() + ('\r\n--'+boundary+'--\r\n').encode()
         result = call('/pipeline-model-converter/validate', body, 'multipart/form-data; boundary='+boundary)[0].decode()
         (evidence/'Yedige_Batyrkhan_jenkins-validation.txt').write_text(result)
         print(result)

@@ -1,0 +1,230 @@
+Started by user Batyrkhan Yedige Yerlanuly
+Checking out git https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git into /var/lib/jenkins/workspace/Yedige_Batyrkhan_Student_API@script/39cba862431c134a792e757602207f21bf5b2ef1b86a8bc004bc14ce0521c563 to read Jenkinsfile
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Yedige_Batyrkhan_Student_API@script/39cba862431c134a792e757602207f21bf5b2ef1b86a8bc004bc14ce0521c563/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git # timeout=10
+Fetching upstream changes from https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+ > git fetch --tags --force --progress -- https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/test/yedige-***REDACTED***khan-ci-recovery^{commit} # timeout=10
+ > git rev-parse test/yedige-***REDACTED***khan-ci-recovery^{commit} # timeout=10
+Checking out Revision e1bfd8b55b7dc8c89d535329e1ce23388f9160c8 (refs/remotes/origin/test/yedige-***REDACTED***khan-ci-recovery)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f e1bfd8b55b7dc8c89d535329e1ce23388f9160c8 # timeout=10
+Commit message: "Yedige Batyrkhan: fix expected normalized email and restore passing test"
+First time build. Skipping changelog.
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/Yedige_Batyrkhan_Student_API
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timeout
+Timeout set to expire in 30 min
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] checkout
+[2026-10-29T21:52:28.785Z] The recommended git tool is: NONE
+[2026-10-29T21:52:28.786Z] No credentials specified
+[2026-10-29T21:52:28.788Z]  > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Yedige_Batyrkhan_Student_API/.git # timeout=10
+[2026-10-29T21:52:28.801Z] Fetching changes from the remote Git repository
+[2026-10-29T21:52:28.806Z]  > git config remote.origin.url https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git # timeout=10
+[2026-10-29T21:52:28.816Z] Fetching upstream changes from https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git
+[2026-10-29T21:52:28.816Z]  > git --version # timeout=10
+[2026-10-29T21:52:28.824Z]  > git --version # 'git version 2.43.0'
+[2026-10-29T21:52:28.825Z]  > git fetch --tags --force --progress -- https://github.com/Yed1ge77/yedige-***REDACTED***khan-student-api.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-10-29T21:52:29.623Z]  > git rev-parse refs/remotes/origin/test/yedige-***REDACTED***khan-ci-recovery^{commit} # timeout=10
+[2026-10-29T21:52:29.629Z]  > git rev-parse test/yedige-***REDACTED***khan-ci-recovery^{commit} # timeout=10
+[2026-10-29T21:52:29.637Z] Checking out Revision e1bfd8b55b7dc8c89d535329e1ce23388f9160c8 (refs/remotes/origin/test/yedige-***REDACTED***khan-ci-recovery)
+[2026-10-29T21:52:29.637Z]  > git config core.sparsecheckout # timeout=10
+[2026-10-29T21:52:29.642Z]  > git checkout -f e1bfd8b55b7dc8c89d535329e1ce23388f9160c8 # timeout=10
+[2026-10-29T21:52:29.651Z] Commit message: "Yedige Batyrkhan: fix expected normalized email and restore passing test"
+[Pipeline] echo
+[2026-10-29T21:52:29.681Z] Batyrkhan Yedige Yerlanuly | IT2-2302 | 38419 | IITU
+[Pipeline] sh
+[2026-10-29T21:52:29.961Z] + java -version
+[2026-10-29T21:52:29.962Z] openjdk version "21.0.12.1" 2026-08-18
+[2026-10-29T21:52:29.962Z] OpenJDK Runtime Environment (build 21.0.12.1+1-1-24.04.4-Ubuntu)
+[2026-10-29T21:52:29.962Z] OpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-24.04.4-Ubuntu, mixed mode, sharing)
+[2026-10-29T21:52:29.962Z] + docker version --format {{.Server.Version}}
+[2026-10-29T21:52:29.962Z] 29.9.1
+[2026-10-29T21:52:29.962Z] + chmod +x gradlew
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] sh
+[2026-10-29T21:52:30.348Z] + id -u
+[2026-10-29T21:52:30.348Z] + id -g
+[2026-10-29T21:52:30.348Z] + docker run --rm --name yedige-***REDACTED***khan-ci-3-build -u 105:108 -v /var/lib/jenkins/workspace/Yedige_Batyrkhan_Student_API:/workspace -w /workspace -e GRADLE_USER_HOME=/workspace/.gradle-ci eclipse-temurin:21-jdk-jammy ./gradlew --no-daemon clean assemble
+[2026-10-29T21:52:31.697Z] To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.6/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+[2026-10-29T21:52:33.570Z] Daemon will be stopped at the end of the build 
+[2026-10-29T21:52:45.694Z] > Task :clean
+[2026-10-29T21:52:45.694Z] > Task :bootBuildInfo
+[2026-10-29T21:52:47.563Z] > Task :compileJava
+[2026-10-29T21:52:47.563Z] > Task :processResources
+[2026-10-29T21:52:47.563Z] > Task :classes
+[2026-10-29T21:52:47.563Z] > Task :resolveMainClassName
+[2026-10-29T21:52:48.115Z] > Task :bootJar
+[2026-10-29T21:52:48.115Z] > Task :jar SKIPPED
+[2026-10-29T21:52:48.115Z] > Task :assemble
+[2026-10-29T21:52:48.115Z] 
+[2026-10-29T21:52:48.115Z] BUILD SUCCESSFUL in 17s
+[2026-10-29T21:52:48.115Z] 6 actionable tasks: 6 executed
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] withCredentials
+[2026-10-29T21:52:48.533Z] Masking supported pattern matches of $DB_PASSWORD
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T21:52:48.782Z] /var/run/postgresql:5432 - accepting connections
+[2026-10-29T21:52:50.126Z] To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.6/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+[2026-10-29T21:52:52.004Z] Daemon will be stopped at the end of the build 
+[2026-10-29T21:53:04.128Z] > Task :bootBuildInfo
+[2026-10-29T21:53:04.128Z] > Task :compileJava UP-TO-DATE
+[2026-10-29T21:53:04.128Z] > Task :processResources UP-TO-DATE
+[2026-10-29T21:53:04.128Z] > Task :classes
+[2026-10-29T21:53:05.045Z] > Task :compileTestJava
+[2026-10-29T21:53:05.045Z] > Task :processTestResources NO-SOURCE
+[2026-10-29T21:53:05.045Z] > Task :testClasses
+[2026-10-29T21:53:17.161Z] OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[2026-10-29T21:53:18.075Z] 2026-10-29T21:53:17.952Z  INFO 123 --- [yedige-***REDACTED***khan-student-api] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-10-29T21:53:18.075Z] 2026-10-29T21:53:17.961Z  INFO 123 --- [yedige-***REDACTED***khan-student-api] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+[2026-10-29T21:53:18.075Z] 2026-10-29T21:53:17.994Z  INFO 123 --- [yedige-***REDACTED***khan-student-api] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[2026-10-29T21:53:18.326Z] > Task :test
+[2026-10-29T21:53:18.326Z] 
+[2026-10-29T21:53:18.326Z] BUILD SUCCESSFUL in 29s
+[2026-10-29T21:53:18.326Z] 5 actionable tasks: 3 executed, 2 up-to-date
+[Pipeline] }
+[Pipeline] // withCredentials
+Post stage
+[Pipeline] junit
+[2026-10-29T21:53:18.677Z] Recording test results
+[2026-10-29T21:53:18.714Z] [Checks API] No suitable checks publisher found.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Docker Build)
+[Pipeline] sh
+[2026-10-29T21:53:19.111Z] + docker build --label owner=yedige-***REDACTED***khan-student-api -t yedige-***REDACTED***khan-student-api:v1.0-yedige-***REDACTED***khan .
+[2026-10-29T21:53:19.362Z] #0 building with "default" instance using docker driver
+[2026-10-29T21:53:19.362Z] 
+[2026-10-29T21:53:19.362Z] #1 [internal] load build definition from Dockerfile
+[2026-10-29T21:53:19.362Z] #1 transferring dockerfile: 866B done
+[2026-10-29T21:53:19.362Z] #1 DONE 0.0s
+[2026-10-29T21:53:19.362Z] 
+[2026-10-29T21:53:19.362Z] #2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+[2026-10-29T21:53:20.185Z] #2 DONE 0.4s
+[2026-10-29T21:53:20.185Z] 
+[2026-10-29T21:53:20.185Z] #3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+[2026-10-29T21:53:20.185Z] #3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.0s done
+[2026-10-29T21:53:20.185Z] #3 CACHED
+[2026-10-29T21:53:20.185Z] 
+[2026-10-29T21:53:20.185Z] #4 [internal] load metadata for docker.io/library/eclipse-temurin:21-jre-jammy
+[2026-10-29T21:53:20.736Z] #4 ...
+[2026-10-29T21:53:20.737Z] 
+[2026-10-29T21:53:20.737Z] #5 [internal] load metadata for docker.io/library/eclipse-temurin:21-jdk-jammy
+[2026-10-29T21:53:20.737Z] #5 DONE 0.8s
+[2026-10-29T21:53:20.737Z] 
+[2026-10-29T21:53:20.737Z] #4 [internal] load metadata for docker.io/library/eclipse-temurin:21-jre-jammy
+[2026-10-29T21:53:20.737Z] #4 DONE 0.8s
+[2026-10-29T21:53:20.737Z] 
+[2026-10-29T21:53:20.737Z] #6 [internal] load .dockerignore
+[2026-10-29T21:53:20.737Z] #6 transferring context: 167B done
+[2026-10-29T21:53:20.737Z] #6 DONE 0.0s
+[2026-10-29T21:53:20.988Z] 
+[2026-10-29T21:53:20.988Z] #7 [runtime 1/4] FROM docker.io/library/eclipse-temurin:21-jre-jammy@sha256:1eac8b8fee11ca7d6725a48bc5d41992ed1561504ebae25490d2d062847e8269
+[2026-10-29T21:53:20.988Z] #7 resolve docker.io/library/eclipse-temurin:21-jre-jammy@sha256:1eac8b8fee11ca7d6725a48bc5d41992ed1561504ebae25490d2d062847e8269 0.0s done
+[2026-10-29T21:53:20.988Z] #7 DONE 0.0s
+[2026-10-29T21:53:20.988Z] 
+[2026-10-29T21:53:20.988Z] #8 [build 1/7] FROM docker.io/library/eclipse-temurin:21-jdk-jammy@sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69
+[2026-10-29T21:53:20.988Z] #8 resolve docker.io/library/eclipse-temurin:21-jdk-jammy@sha256:4b1a74fbffbe6b4e7b6f0171a472478282fb463790a51edf10e465d578f22b69 0.0s done
+[2026-10-29T21:53:20.988Z] #8 DONE 0.0s
+[2026-10-29T21:53:20.988Z] 
+[2026-10-29T21:53:20.988Z] #9 [internal] load build context
+[2026-10-29T21:53:20.988Z] #9 transferring context: 11.41kB done
+[2026-10-29T21:53:20.988Z] #9 DONE 0.0s
+[2026-10-29T21:53:20.988Z] 
+[2026-10-29T21:53:20.988Z] #10 [build 2/7] WORKDIR /workspace
+[2026-10-29T21:53:20.988Z] #10 CACHED
+[2026-10-29T21:53:20.988Z] 
+[2026-10-29T21:53:20.988Z] #11 [build 3/7] COPY gradlew settings.gradle build.gradle gradle.properties ./
+[2026-10-29T21:53:20.988Z] #11 CACHED
+[2026-10-29T21:53:20.988Z] 
+[2026-10-29T21:53:20.988Z] #12 [build 4/7] COPY gradle ./gradle
+[2026-10-29T21:53:20.988Z] #12 CACHED
+[2026-10-29T21:53:20.988Z] 
+[2026-10-29T21:53:20.988Z] #13 [build 5/7] RUN chmod +x gradlew
+[2026-10-29T21:53:20.988Z] #13 CACHED
+[2026-10-29T21:53:20.988Z] 
+[2026-10-29T21:53:20.988Z] #14 [build 6/7] COPY src ./src
+[2026-10-29T21:53:20.988Z] #14 DONE 0.0s
+[2026-10-29T21:53:20.988Z] 
+[2026-10-29T21:53:20.988Z] #15 [build 7/7] RUN --mount=type=cache,target=/root/.gradle ./gradlew --no-daemon -PappVersion=1.0.1 bootJar -x test
+[2026-10-29T21:53:22.861Z] #15 1.726 To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.6/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+[2026-10-29T21:53:24.729Z] #15 3.520 Daemon will be stopped at the end of the build 
+[2026-10-29T21:53:36.840Z] #15 15.52 > Task :bootBuildInfo
+[2026-10-29T21:53:38.956Z] #15 17.92 > Task :compileJava
+[2026-10-29T21:53:38.956Z] #15 17.92 > Task :processResources
+[2026-10-29T21:53:38.956Z] #15 17.92 > Task :classes
+[2026-10-29T21:53:38.956Z] #15 18.02 > Task :resolveMainClassName
+[2026-10-29T21:53:40.309Z] #15 19.32 > Task :bootJar
+[2026-10-29T21:53:40.560Z] #15 19.42 
+[2026-10-29T21:53:40.560Z] #15 19.42 BUILD SUCCESSFUL in 18s
+[2026-10-29T21:53:40.560Z] #15 19.42 5 actionable tasks: 5 executed
+[2026-10-29T21:53:40.560Z] #15 DONE 19.6s
+[2026-10-29T21:53:40.561Z] 
+[2026-10-29T21:53:40.561Z] #16 [runtime 2/4] RUN groupadd --gid 10001 studentapi && useradd --uid 10001 --gid studentapi --no-create-home studentapi
+[2026-10-29T21:53:40.561Z] #16 CACHED
+[2026-10-29T21:53:40.561Z] 
+[2026-10-29T21:53:40.561Z] #17 [runtime 3/4] WORKDIR /app
+[2026-10-29T21:53:40.561Z] #17 CACHED
+[2026-10-29T21:53:40.561Z] 
+[2026-10-29T21:53:40.561Z] #18 [runtime 4/4] COPY --from=build --chown=10001:10001 /workspace/build/libs/student-api.jar /app/student-api.jar
+[2026-10-29T21:53:40.812Z] #18 DONE 0.2s
+[2026-10-29T21:53:40.812Z] 
+[2026-10-29T21:53:40.812Z] #19 exporting to image
+[2026-10-29T21:53:40.812Z] #19 exporting layers
+[2026-10-29T21:53:43.297Z] #19 exporting layers 2.3s done
+[2026-10-29T21:53:43.297Z] #19 exporting manifest sha256:01fc9044c1ef087ee479ec79643cc67a9f30f29f089177cb0636a4af17da7a89 0.0s done
+[2026-10-29T21:53:43.297Z] #19 exporting config sha256:46e3f2452ddeda64ab03926ced496bbc6f85e97f24fcd63d7193a9ea714311ff 0.0s done
+[2026-10-29T21:53:43.297Z] #19 exporting attestation manifest sha256:fea59508ef31834237532e42cbf69b3a2e82e2e673fdd73ce5cbdad4432cb7bf 0.0s done
+[2026-10-29T21:53:43.297Z] #19 exporting manifest list sha256:f0f0bf7136e225955f544245747845074d56dc14aea9e07b82d9a055aacea438 0.0s done
+[2026-10-29T21:53:43.297Z] #19 naming to docker.io/library/yedige-***REDACTED***khan-student-api:v1.0-yedige-***REDACTED***khan done
+[2026-10-29T21:53:43.297Z] #19 unpacking to docker.io/library/yedige-***REDACTED***khan-student-api:v1.0-yedige-***REDACTED***khan
+[2026-10-29T21:53:43.297Z] #19 unpacking to docker.io/library/yedige-***REDACTED***khan-student-api:v1.0-yedige-***REDACTED***khan 0.4s done
+[2026-10-29T21:53:43.549Z] #19 DONE 2.7s
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Verify)
+[Pipeline] sh
+[2026-10-29T21:53:43.938Z] + docker image inspect yedige-***REDACTED***khan-student-api:v1.0-yedige-***REDACTED***khan --format Image={{.Id}} Created={{.Created}} Size={{.Size}} User={{.Config.User}}
+[2026-10-29T21:53:43.938Z] Image=sha256:f0f0bf7136e225955f544245747845074d56dc14aea9e07b82d9a055aacea438 Created=2026-10-30T02:53:40.559121006+05:00 Size=515966437 User=10001:10001
+[Pipeline] echo
+[2026-10-29T21:53:43.972Z] Verified personalized image for Batyrkhan Yedige Yerlanuly
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] sh
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // timeout
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

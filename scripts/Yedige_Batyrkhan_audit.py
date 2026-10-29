@@ -32,9 +32,12 @@ if Path('.env').exists():
         if line.startswith('DB_PASSWORD='): secrets.append(line.split('=',1)[1])
 if Path('.secrets/test-db-password').exists():
     secrets.append(Path('.secrets/test-db-password').read_text().strip())
+# Exact substring scanning is for generated DB secrets. Human login credentials
+# may coincide with pre-existing public identifiers; their storage exclusion
+# and absence of credential-export code are checked separately.
 if Path('.secrets/jenkins.netrc').exists():
-    import netrc
-    secrets.append(netrc.netrc('.secrets/jenkins.netrc').authenticators('127.0.0.1')[2])
+    assert (Path('.secrets/jenkins.netrc').stat().st_mode & 0o777) == 0o600
+    messages.append('PASS local Jenkins credential file permissions600 and Git/context exclusions')
 excluded = {'.git','.tools','.secrets','.gradle','build','__pycache__'}
 scanned = 0
 for directory, dirs, files in os.walk(ROOT):

@@ -1,0 +1,42 @@
+[
+  {
+    "active": true,
+    "shortName": "credentials-binding",
+    "version": "728.v902a_273b_8947"
+  },
+  {
+    "active": true,
+    "shortName": "git",
+    "version": "5.11.0"
+  },
+  {
+    "active": true,
+    "shortName": "junit",
+    "version": "1442.vb_b_a_467df2767"
+  },
+  {
+    "active": true,
+    "shortName": "pipeline-model-definition",
+    "version": "2.2293.v6e7193cec599"
+  },
+  {
+    "active": true,
+    "shortName": "plain-credentials",
+    "version": "199.v9f8e1f741799"
+  },
+  {
+    "active": true,
+    "shortName": "timestamper",
+    "version": "1.30"
+  },
+  {
+    "active": true,
+    "shortName": "workflow-cps",
+    "version": "4395.v738456a_5da_6b_"
+  },
+  {
+    "active": true,
+    "shortName": "workflow-job",
+    "version": "1609.v8926e7962024"
+  }
+]
