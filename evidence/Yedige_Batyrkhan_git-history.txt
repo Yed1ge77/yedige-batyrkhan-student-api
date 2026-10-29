@@ -1,4 +1,9 @@
-*   70883f4 (HEAD -> main) Yedige Batyrkhan: resolve README conflict preserving demo and defense requirements
+* fa3c09f (HEAD -> main) Yedige Batyrkhan: record verified PostgreSQL API, full defense and honest requirement audit
+| * e1bfd8b (test/yedige-batyrkhan-ci-recovery) Yedige Batyrkhan: fix expected normalized email and restore passing test
+| * 3d25172 (test/yedige-batyrkhan-ci-failure-repro) Yedige Batyrkhan: demonstrate controlled CI failure with wrong email expectation
+|/  
+* 537823d Yedige Batyrkhan: support version rebuilds and reproducible isolated verification
+*   70883f4 Yedige Batyrkhan: resolve README conflict preserving demo and defense requirements
 |\  
 | * 4bfbe0e (feature/yedige-batyrkhan-documentation) Yedige Batyrkhan: document oral defense scope
 * |   11eac23 Yedige Batyrkhan: merge demonstration documentation
@@ -18,3 +23,9 @@
   feature/yedige-batyrkhan-documentation
   feature/yedige-batyrkhan-readme-review
 * main
+  test/yedige-batyrkhan-ci-failure-repro
++ test/yedige-batyrkhan-ci-recovery
+Remote URLs (none configured; GitHub auth blocked):
+Release tags (none; final Docker and Jenkins verification pending):
+Batyrkhan Yedige Yerlanuly
+208401081+Yed1ge77@users.noreply.github.com

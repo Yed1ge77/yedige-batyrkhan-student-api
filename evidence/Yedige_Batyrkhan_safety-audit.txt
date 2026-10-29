@@ -18,7 +18,7 @@ PASS Docker context exclusion .tools
 PASS Docker context exclusion .ci*
 PASS Docker context exclusion .gradle-ci/
 PASS exact secret-value scan of 80 project files; values not printed
-PASS exact secret-value scan across 55 historical Git blobs
+PASS exact secret-value scan across 96 historical Git blobs
 PASS no real .env, .secrets or .tools tracked
 PASS merge resolved and README contains no conflict markers
 PASS system report permissions744 and identical final README backup
