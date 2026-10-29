@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker run --rm -u "$(id -u):$(id -g)" -v "$PWD:/workspace" -w /workspace -e GRADLE_USER_HOME=/workspace/.gradle-ci eclipse-temurin:21-jdk-jammy ./gradlew --no-daemon clean assemble'
+                sh 'docker run --rm --name "${CI_DB}-build" -u "$(id -u):$(id -g)" -v "$PWD:/workspace" -w /workspace -e GRADLE_USER_HOME=/workspace/.gradle-ci eclipse-temurin:21-jdk-jammy ./gradlew --no-daemon clean assemble'
             }
         }
         stage('Test') {
@@ -46,7 +46,7 @@ for attempt in {1..60}; do
   sleep 1
 done
 docker exec "$CI_DB" pg_isready -U "$DB_USER" -d student_api_test
-docker run --rm --network "$CI_NETWORK" -u "$(id -u):$(id -g)" \
+docker run --rm --name "${CI_DB}-test" --network "$CI_NETWORK" -u "$(id -u):$(id -g)" \
   -v "$PWD:/workspace" -w /workspace -e GRADLE_USER_HOME=/workspace/.gradle-ci \
   -e DB_PASSWORD -e DB_USER -e DB_URL=jdbc:postgresql://db:5432/student_api_test \
   eclipse-temurin:21-jdk-jammy ./gradlew --no-daemon test
@@ -69,9 +69,11 @@ docker run --rm --network "$CI_NETWORK" -u "$(id -u):$(id -g)" \
         always {
             sh '''#!/bin/bash
 set -euo pipefail
-if docker container inspect "$CI_DB" >/dev/null 2>&1; then
-    docker rm -fv "$CI_DB" >/dev/null
-fi
+for container in "${CI_DB}-build" "${CI_DB}-test" "$CI_DB"; do
+    if docker container inspect "$container" >/dev/null 2>&1; then
+        docker rm -fv "$container" >/dev/null
+    fi
+done
 if docker network inspect "$CI_NETWORK" >/dev/null 2>&1; then
     docker network rm "$CI_NETWORK" >/dev/null
 fi

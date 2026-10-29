@@ -2,6 +2,7 @@
 """Create only this project's credential/job using an authenticated Jenkins API."""
 import base64
 import json
+import http.cookiejar
 import netrc
 import secrets
 import urllib.parse
@@ -17,12 +18,13 @@ CREDENTIAL_ID = 'Yedige_Batyrkhan_CI_DB_PASSWORD'
 
 def main():
     login, _, password = netrc.netrc(str(ROOT / '.secrets/jenkins.netrc')).authenticators('127.0.0.1')
+    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
     headers = {'Authorization': 'Basic ' + base64.b64encode(f'{login}:{password}'.encode()).decode()}
     def request(path, data=None, content_type=None):
         h = dict(headers)
         if content_type:
             h['Content-Type'] = content_type
-        with urllib.request.urlopen(urllib.request.Request(URL + path, data=data, headers=h), timeout=60) as response:
+        with opener.open(urllib.request.Request(URL + path, data=data, headers=h), timeout=60) as response:
             return response.read()
     crumb = json.loads(request('/crumbIssuer/api/json'))
     headers[crumb['crumbRequestField']] = crumb['crumb']
@@ -50,7 +52,7 @@ def main():
     remote = ET.SubElement(ET.SubElement(scm, 'userRemoteConfigs'), 'hudson.plugins.git.UserRemoteConfig')
     ET.SubElement(remote, 'url').text = 'https://github.com/Yed1ge77/yedige-batyrkhan-student-api.git'
     branch = ET.SubElement(ET.SubElement(scm, 'branches'), 'hudson.plugins.git.BranchSpec')
-    ET.SubElement(branch, 'name').text = '*/${BRANCH}'
+    ET.SubElement(branch, 'name').text = '${BRANCH}'
     ET.SubElement(scm, 'doGenerateSubmoduleConfigurations').text = 'false'
     ET.SubElement(scm, 'submoduleCfg', {'class': 'empty-list'})
     ET.SubElement(scm, 'extensions')

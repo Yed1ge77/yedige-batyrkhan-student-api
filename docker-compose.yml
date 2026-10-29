@@ -2,7 +2,10 @@ name: yedige-batyrkhan-student-api
 services:
   app:
     image: yedige-batyrkhan-student-api:v1.0-yedige-batyrkhan
-    build: .
+    build:
+      context: .
+      args:
+        APP_VERSION: ${APP_VERSION:-1.0.1}
     ports:
       - "127.0.0.1:${APP_PORT:-8081}:8080"
     environment:
