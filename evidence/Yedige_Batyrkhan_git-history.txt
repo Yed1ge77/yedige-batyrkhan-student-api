@@ -1,20 +1,22 @@
-* fa3c09f (HEAD -> main) Yedige Batyrkhan: record verified PostgreSQL API, full defense and honest requirement audit
-| * e1bfd8b (test/yedige-batyrkhan-ci-recovery) Yedige Batyrkhan: fix expected normalized email and restore passing test
-| * 3d25172 (test/yedige-batyrkhan-ci-failure-repro) Yedige Batyrkhan: demonstrate controlled CI failure with wrong email expectation
+* 7047b12 (HEAD -> main, origin/main) Yedige Batyrkhan: verify Docker CRUD and volume persistence; publish GitHub project
+* 5a7fd5a Yedige Batyrkhan: save final local history and safety verification evidence
+* fa3c09f Yedige Batyrkhan: record verified PostgreSQL API, full defense and honest requirement audit
+| * e1bfd8b (origin/test/yedige-batyrkhan-ci-recovery, test/yedige-batyrkhan-ci-recovery) Yedige Batyrkhan: fix expected normalized email and restore passing test
+| * 3d25172 (origin/test/yedige-batyrkhan-ci-failure-repro, test/yedige-batyrkhan-ci-failure-repro) Yedige Batyrkhan: demonstrate controlled CI failure with wrong email expectation
 |/  
 * 537823d Yedige Batyrkhan: support version rebuilds and reproducible isolated verification
 *   70883f4 Yedige Batyrkhan: resolve README conflict preserving demo and defense requirements
 |\  
-| * 4bfbe0e (feature/yedige-batyrkhan-documentation) Yedige Batyrkhan: document oral defense scope
+| * 4bfbe0e (origin/feature/yedige-batyrkhan-documentation, feature/yedige-batyrkhan-documentation) Yedige Batyrkhan: document oral defense scope
 * |   11eac23 Yedige Batyrkhan: merge demonstration documentation
 |\ \  
 | |/  
 |/|   
-| * 069694b (feature/yedige-batyrkhan-readme-review) Yedige Batyrkhan: document reproducible API demonstration
+| * 069694b (origin/feature/yedige-batyrkhan-readme-review, feature/yedige-batyrkhan-readme-review) Yedige Batyrkhan: document reproducible API demonstration
 |/  
 *   4fcabfd Yedige Batyrkhan: merge verified CRUD implementation and delivery configuration
 |\  
-| * 63b3d98 (feature/yedige-batyrkhan-crud) Yedige Batyrkhan: add isolated Docker Compose stack and Jenkins PostgreSQL pipeline
+| * 63b3d98 (origin/feature/yedige-batyrkhan-crud, feature/yedige-batyrkhan-crud) Yedige Batyrkhan: add isolated Docker Compose stack and Jenkins PostgreSQL pipeline
 | * 9eaa2ee Yedige Batyrkhan: verify CRUD errors against real PostgreSQL with Gradle Wrapper
 | * 1cf95cc Yedige Batyrkhan: implement PostgreSQL Student CRUD with validated DTOs
 |/  
@@ -25,7 +27,11 @@
 * main
   test/yedige-batyrkhan-ci-failure-repro
 + test/yedige-batyrkhan-ci-recovery
-Remote URLs (none configured; GitHub auth blocked):
-Release tags (none; final Docker and Jenkins verification pending):
-Batyrkhan Yedige Yerlanuly
-208401081+Yed1ge77@users.noreply.github.com
+  remotes/origin/feature/yedige-batyrkhan-crud
+  remotes/origin/feature/yedige-batyrkhan-documentation
+  remotes/origin/feature/yedige-batyrkhan-readme-review
+  remotes/origin/main
+  remotes/origin/test/yedige-batyrkhan-ci-failure-repro
+  remotes/origin/test/yedige-batyrkhan-ci-recovery
+origin	https://github.com/Yed1ge77/yedige-batyrkhan-student-api.git (fetch)
+origin	https://github.com/Yed1ge77/yedige-batyrkhan-student-api.git (push)
